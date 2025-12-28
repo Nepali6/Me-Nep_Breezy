@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Nepali Minecraft Youtuber Nep_Breezy,kshitiz"
+    />
+    <title>About-Kshitiz aka Nep_Breezy</title>
+    />
+    <style>
+      body {
+        background-color: rgb(15, 15, 77);
+        font-family: "Poppins", sans-serif;
+      }
+      header {
+        background-color: rgb(152, 13, 207);
+        font-size: larger;
+        padding: 1px;
+        color: rgb(133, 247, 255);
+      }
+      footer {
+        background-color: #8b00c9;
+        color: #e0ffff;
+        text-align: center;
+        padding: 12px;
+        margin-top: 40px;
+        font-size: 0.95rem;
+      }
+      h1 {
+        text-align: center;
+        text-shadow: 5px 5px 0 #000000, 6px 6px 0 #3f3f00;
+      }
+      img {
+        width: 80px;
+        float: left;
+        margin-left: 60px;
+        margin-top: 15px;
+      }
+      .Youtube {
+        margin-left: 30px;
+        font-size: small;
+      }
+      .subtitle {
+        font-family: "Press Start 2P", cursive;
+        font-size: 1.3rem;
+        color: #55ff55;
+        text-shadow: 3px 3px 0 #000000, 4px 4px 0 #003f00;
+        margin-top: 1rem;
+        letter-spacing: 2px;
+        text-align: center;
+      }
+      .content {
+        max-width: 900px;
+        margin: 30px auto;
+        padding: 0 20px;
+        font-size: 1.05rem;
+        line-height: 1.8;
+        text-align: justify;
+        color: white;
+      }
+      .social-center {
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+        margin-top: 20px;
+      }
+
+      .social-btn {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        padding: 8px 16px;
+        font-weight: bold;
+        border-radius: 20px;
+        color: white;
+        text-decoration: none;
+      }
+
+      .discord {
+        background: #5865f2;
+        transition: 0.3s ease;
+      }
+      .discord:hover {
+        background: #9099ff;
+        transform: translateY(-1px);
+      }
+      .twitter {
+        background: #1da1f2;
+        transition: 0.3s ease;
+      }
+      .twitter:hover {
+        background: #71c8ff;
+        transform: translateY(-1px);
+      }
+      .facebook {
+        background: #1877f2;
+        transition: 0.3s ease;
+      }
+      .facebook:hover {
+        background: #3f92ff;
+        transform: translateY(-1px);
+      }
+      .social-btn img {
+        width: 18px;
+        height: 18px;
+      }
+      nav {
+        background-color: #000000;
+        margin-top: 5px;
+        padding: 10px;
+      }
+      nav a {
+        font-size: 1.5rem;
+        color: white;
+      }
+      nav a:hover {
+        color: #55ff55;
+      }
+      .extra-section {
+        max-width: 900px;
+        margin: 50px auto;
+        padding: 0 20px;
+        text-align: center;
+        color: white;
+      }
+
+      .extra-section h2 {
+        font-size: 1.8rem;
+        margin-bottom: 15px;
+        color: #55ff55;
+      }
+
+      .card-row {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+      }
+      .venom-row {
+        justify-content: center;
+        display: flex;
+        flex-wrap: wrap;
+      }
+      .card {
+        background: #242456;
+        padding: 15px 20px;
+        border-radius: 10px;
+        font-weight: bold;
+        min-width: 200px;
+        transition: 0.3s ease;
+        color: white;
+        text-decoration: none;
+      }
+      .Venom {
+        background: #2c2ce0;
+        padding: 15px 20px;
+        border-radius: 10px;
+        font-weight: bold;
+        min-width: 200px;
+        transition: 0.3s ease;
+        color: white;
+        text-decoration: none;
+        margin-left: 550px;
+      }
+      .card:hover {
+        background: #2c2c8a;
+        transform: translateY(-5px);
+      }
+      .Venom:hover {
+        background: #2c2c8a;
+        transform: translateY(-5px);
+      }
+      .extra-text {
+        max-width: 700px;
+        margin: auto;
+        line-height: 1.7;
+        font-size: 1.05rem;
+      }
+      /* Floating animation */
+      @keyframes float {
+        0% {
+          transform: translateY(20px);
+        }
+        50% {
+          transform: translateY(-7px);
+        }
+        100% {
+          transform: translateY(20px);
+        }
+      }
+
+      /* Apply floating effect */
+      .floating {
+        animation: float 4s ease-in-out infinite;
+      }
+      /* Page entrance animation */
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(40px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      /* Apply animation */
+      .fade-in {
+        animation: fadeInUp 1s ease-out forwards;
+      }
+
+      /* Delay helpers */
+      .delay-1 {
+        animation-delay: 0.2s;
+      }
+      .delay-2 {
+        animation-delay: 0.4s;
+      }
+      .delay-3 {
+        animation-delay: 0.6s;
+      }
+      .delay-4 {
+        animation-delay: 0.8s;
+      }
+      /* ===== FULL PAGE INTRO ANIMATION ===== */
+
+      #intro {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: #0f0f4d;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 9999;
+        animation: hideIntro 1s ease forwards;
+        animation-delay: 3s;
+      }
+
+      .intro-content {
+        text-align: center;
+        animation: fadeInScale 1.5s ease;
+      }
+
+      .intro-content img {
+        width: 450px;
+        margin-bottom: 15px;
+        animation: float 3s ease-in-out infinite;
+      }
+
+      .intro-content h1 {
+        color: #55ff55;
+        font-size: 4rem;
+        margin-bottom: 10px;
+      }
+
+      .intro-content p {
+        color: #ccc;
+        letter-spacing: 2px;
+        font-size: 3rem;
+      }
+
+      /* Animations */
+      @keyframes fadeInScale {
+        from {
+          opacity: 0;
+          transform: scale(0.8);
+        }
+        to {
+          opacity: 1;
+          transform: scale(1);
+        }
+      }
+
+      @keyframes hideIntro {
+        to {
+          opacity: 0;
+          visibility: hidden;
+        }
+      }
+
+      @keyframes float {
+        0% {
+          transform: translateY(0px);
+        }
+        50% {
+          transform: translateY(-10px);
+        }
+        100% {
+          transform: translateY(0px);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- INTRO SCREEN -->
+    <div id="intro">
+      <div class="intro-content">
+        <img src="image/Nep_Breezy.png" alt="Nep Breezy Logo" />
+        <h1>Nep_Breezy</h1>
+        <p>Loading Experience...</p>
+      </div>
+    </div>
+    <header>
+      <a
+        href="https://youtube.com/@nep_breezy-2k?si=SIShOGTj2P19d2gj"
+        target="main"
+      >
+        <img src="image/Nep_Breezy.png" alt="Nep_Breezy Youtube Channel"
+      /></a>
+      <h1 class="floating">Kshitiz Bashyal aka <u>(Nep_Breezy)</u></h1>
+      <p class="Youtube">click Image For My Youtube</p>
+    </header>
+    <nav>
+      <a href="index.html"><b>HOME</b></a>
+    </nav>
+    <div class="subtitle floating">
+      » NEPALI Minecraft YOUTUBER & Minecraft Server Dev «
+    </div>
+    <a href="https://nep-breezy.vercel.app/" class="Venom">
+      🐍 Venom SMP Developer Click here Know
+    </a>
+    <div class="content fade-in delay-2">
+      <p>
+        Hello! I’m Kshitiz, also known as <b>Nep_Breezy</b> — a Nepali Minecraft
+        content creator and server developer. I create engaging Minecraft
+        content, explore creative builds, and work on custom Minecraft servers
+        for the Nepali gaming community. Ever since I started playing Minecraft,
+        I have been fascinated by the creativity and endless possibilities the
+        game offers. Over the years, I have dedicated myself to building
+        engaging content for my audience, creating unique custom servers, and
+        exploring new ways to innovate within the Minecraft community. My goal
+        is not only to entertain but also to educate and inspire other players
+        by sharing tips, tutorials, and exciting gameplay experiences. I love
+        collaborating with fellow creators and engaging with my audience to
+        build a friendly and active community. Beyond gaming, I am constantly
+        learning new skills in programming, server management, and content
+        production to improve the quality of my work. Through Nep_Breezy, I aim
+        to bring the Nepali gaming community closer together and showcase our
+        creativity to the world.
+      </p>
+      <p>
+        My goal is to entertain, educate, and grow the Minecraft community in
+        Nepal by sharing quality content and innovative gameplay ideas.
+      </p>
+    </div>
+    <section class="extra-section">
+      <h2>What I Do</h2>
+      <div class="card-row fade-in delay-3">
+        <div class="card">🎮 Minecraft Content Creation</div>
+        <div class="card">⚙️ Custom Server Development</div>
+        <div class="card">🎥 Video Editing & Thumbnails</div>
+        <div class="card">💻 Web & Plugin Learning</div>
+        <div class="card">♟️ Chess Player</div>
+        <div class="card">🏏 Cricket Enthusiast</div>
+        <div class="card">⚔️ Minecraft PvP Specialist</div>
+        <div class="card">💻 Software Engineering</div>
+        <div class="card">🤖 Machine Learning</div>
+        <div class="card">🛡️ Cyber Security</div>
+      </div>
+    </section>
+    <section class="extra-section">
+      <h2>My Goals</h2>
+      <p class="extra-text">
+        My main goal is to grow a strong and positive Minecraft community in
+        Nepal. I want to create high-quality servers, helpful tutorials, and
+        entertaining content that inspires new creators. I am constantly
+        learning new skills in programming, server management, and content
+        creation to improve every day.
+      </p>
+    </section>
+    <div class="social-center fade-in delay-4r">
+      <a
+        href="https://discord.gg/tVMW5rhnQ"
+        class="social-btn discord"
+        target="_blank"
+      >
+        <img
+          src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/discord.svg"
+        />
+        Discord
+      </a>
+
+      <a
+        href="https://x.com/Nep_Breezy"
+        class="social-btn twitter"
+        target="_blank"
+      >
+        <img
+          src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/twitter.svg"
+        />
+        Twitter
+      </a>
+
+      <a
+        href="https://www.facebook.com/kshitiz.bashyal.39"
+        class="social-btn facebook"
+        target="_blank"
+      >
+        <img
+          src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/facebook.svg"
+        />
+        Facebook
+      </a>
+    </div>
+    <footer>
+      <span> <b>&copy; 2025 @ Nep_Breezy — All Rights Reserved</b></span>
+    </footer>
+  </body>
+</html>
