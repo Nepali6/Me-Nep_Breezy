@@ -130,18 +130,24 @@
         width: 18px;
         height: 18px;
       }
-      nav {
-        background-color: #000000;
-        margin-top: 5px;
-        padding: 10px;
-      }
-      nav a {
-        font-size: 1.5rem;
-        color: white;
-      }
-      nav a:hover {
-        color: #55ff55;
-      }
+    nav {
+  background-color: #000000;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between; /* left & right */
+  align-items: center;
+}
+
+nav a {
+  font-size: 1.5rem;
+  color: white;
+  text-decoration: none;
+  transition: 0.3s ease;
+}
+
+nav a:hover {
+  color: #55ff55;
+}
       .extra-section {
         max-width: 900px;
         margin: 50px auto;
@@ -433,6 +439,7 @@ I’m Kshitiz, also known as Nep_Breezy, a passionate Minecraft content creator 
     </footer>
   </body>
 </html>
+
 
 
 
