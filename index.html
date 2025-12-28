@@ -294,14 +294,24 @@
         100% {
           transform: translateY(0px);
         }
-      .store-ip {
-    font-size: 18px;
-    font-weight: 700;
-    color: #99aec2;
-    cursor: pointer;
-    transition: 0.3s;
-}
+        .store-ip {
+            font-size: 18px;
+            font-weight: 700;
+            color: #99aec2;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .store-ip:hover {
+            color: #ffffff;
+        }
     </style>
+    <script>
+      function copyIP() {
+        navigator.clipboard.writeText("bloodyvenom.xav.lat:19134");
+        alert("IP copied: bloodyvenom.xav.lat:19134");
+      }
+    </script>
   </head>
   <body>
     <!-- INTRO SCREEN -->
@@ -332,7 +342,7 @@
       🐍 Venom SMP Developer Click here Know
     </a>
     <div class="store-ip" onclick="copyIP()">
-                <i class="fa-solid fa-server"></i> Play.Magmacore.fun
+                <i class="fa-solid fa-server"></i> bloodyvenom.xav.lat:19134
             </div>
     <div class="content fade-in delay-2">
       <p>
@@ -422,4 +432,5 @@
     </footer>
   </body>
 </html>
+
 
