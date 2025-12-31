@@ -11,20 +11,19 @@
     />
     <style>
       body {
-        background-color: rgb(15, 15, 77);
+        background-color: rgb(11, 11, 60);
         font-family: "Poppins", sans-serif;
       }
       header {
-        background-color: rgb(152, 13, 207);
+        background-color: rgb(132, 24, 174);
         font-size: 1.5rem;
         padding: 1px;
         color: rgb(133, 247, 255);
       }
       footer {
-        background-color: #8b00c9;
         color: #e0ffff;
         text-align: center;
-        margin-top: 40px;
+        margin-top: 50px;
         font-size: 0.95rem;
       }
       h1 {
@@ -337,7 +336,6 @@
         animation: glowPulse 1.5s ease-in-out infinite alternate;
         margin-top: 10px;
       }
-
       @keyframes glowPulse {
         0% {
           text-shadow: 0 0 3px #55ffee, 0 0 6px #00ffcc;
@@ -379,6 +377,80 @@
           text-shadow: 0 0 3px #00fff0, 0 0 6px #00fff0, 0 0 9px #00fff0;
         }
       }
+      /* ===== GOALS SECTION STYLE ===== */
+
+.goal-section {
+  max-width: 1200px;
+  margin: 80px auto;
+  padding: 0 20px;
+  text-align: center;
+}
+
+.goal-title {
+  font-size: 2.3rem;
+  margin-bottom: 35px;
+  color: #9ffcff;
+  text-shadow: 0 0 12px rgba(0, 255, 255, 0.5);
+}
+
+.goal-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 20px;
+}
+
+.goal-box {
+  background: linear-gradient(145deg, #101428, #151a30);
+  border-radius: 16px;
+  padding: 25px 20px;
+  font-size: 1.05rem;
+  color: #e7faff;
+  font-weight: 600;
+  text-align: center;
+  transition: 0.35s ease;
+  box-shadow:
+    0 0 0 1px rgba(0, 255, 255, 0.25),
+    0 0 20px rgba(0, 255, 255, 0.15);
+}
+
+.goal-box:hover {
+  transform: translateY(-6px) scale(1.02);
+  box-shadow:
+    0 0 0 1px rgba(0, 255, 255, 0.5),
+    0 0 35px rgba(0, 255, 255, 0.4);
+}
+.about-card {
+  max-width: 900px;
+  margin: 60px auto;
+  padding: 30px 35px;
+  border-radius: 18px;
+  background: linear-gradient(135deg, #11263c, #152035);
+  color: #e5f7ff;
+  font-size: 1.15rem;
+  line-height: 1.8;
+  box-shadow:
+    0 0 25px rgba(0, 180, 255, 0.25),
+    inset 0 0 25px rgba(0, 155, 155, 0.05);
+  transition: 0.4s ease;
+}
+
+.about-card:hover {
+  transform: translateY(-6px);
+  box-shadow:
+    0 0 40px rgba(0, 180, 255, 0.45),
+    inset 0 0 35px rgba(0, 255, 255, 0.141);
+}
+.about-card .high {
+  color: #ff0000;
+  font-weight: 600;
+}
+.about-card .highlight {
+  color: #00eaff;
+  font-weight: 600;
+}
+.about-card .light {
+  color: #00eaff;
+}
     </style>
   </head>
   <body>
@@ -420,19 +492,17 @@
     <div class="content fade-in delay-2">
       <button class="join-btn" onclick="copyIP()">
         Join Now – bloodyvenom.xav.lat:19134
-      </button>
+      </button></div>
       <div class="glowing-about">🎮 <b>About Me</b> <br /></div>
-      <p>
-        I’m Kshitiz, also known as Nep_Breezy, a passionate Minecraft content
-        creator and developer from Nepal. I enjoy building creative worlds,
-        experimenting with game mechanics, and sharing my journey with the
-        gaming community.
-      </p>
-      <p>
-        My goal is to entertain, educate, and grow the Minecraft community in
-        Nepal by sharing quality content and innovative gameplay ideas.
-      </p>
-    </div>
+      <div class="about-card">
+  <p>
+    I'm <span class="highlight">Kshitiz</span>, also known as 
+    <span class="highlight">Nep_Breezy</span>, a passionate 
+    <span class="high">Minecraft content creator</span> from Nepal.
+    I enjoy <span class="light">building creative worlds</span>, experimenting with game mechanics,
+    and sharing my journey with the gaming community.
+  </p>
+</div>
     <section class="extra-section">
       <h2 class="glowing-about">What I Do</h2>
       <div class="card-row fade-in delay-3">
@@ -447,17 +517,18 @@
         <div class="card">🤖 Machine Learning</div>
         <div class="card">🛡️ Cyber Security</div>
       </div>
-    </section>
-    <section class="extra-section">
-      <h2 class="glowing-about">My Goals</h2>
-      <p class="extra-text">
-        My main goal is to grow a strong and positive Minecraft community in
-        Nepal. I want to create high-quality servers, helpful tutorials, and
-        entertaining content that inspires new creators. I am constantly
-        learning new skills in programming, server management, and content
-        creation to improve every day.
-      </p>
-    </section>
+    <section class="goal-section">
+  <h2 class="goal-title">My Goals</h2>
+
+  <div class="goal-grid">
+    <div class="goal-box">🔥 Strong Minecraft Community</div>
+    <div class="goal-box">⚔️ High Quality PvP Experience</div>
+    <div class="goal-box">🛠️ Advanced Custom Servers</div>
+    <div class="goal-box">🎮 Fun & Fair Gameplay</div>
+    <div class="goal-box">🚀 Constant Updates & Events</div>
+    <div class="goal-box">🧠 Learning & Improving Daily</div>
+  </div>
+</section>
     <div class="social-center fade-in delay-4r">
       <a
         href="https://discord.gg/tVMW5rhnQ"
@@ -492,7 +563,7 @@
         Facebook
       </a>
     </div>
-    <footer>
+    <footer><hr>
       <p class="glowing-footer">
         <span
           style="
