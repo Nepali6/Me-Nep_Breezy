@@ -468,6 +468,54 @@
       .about-card .light {
         color: #00eaff;
       }
+      .info-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+  max-width: 1000px;
+  margin: 40px auto;
+}
+
+.info-card {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 22px 24px;
+  background: linear-gradient(145deg, #0d1220, #141a2b);
+  border-radius: 18px;
+  color: #ffffff;
+  box-shadow: 0 0 0 1px rgba(0,255,255,0.15),
+              0 10px 30px rgba(0,0,0,0.6);
+  transition: 0.3s ease;
+}
+
+.info-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 0 25px rgba(0,255,255,0.45);
+}
+
+.info-card .icon {
+  font-size: 28px;
+  color: #00f6ff;
+  background: rgba(0,255,255,0.1);
+  padding: 12px;
+  border-radius: 12px;
+}
+
+.info-card h4 {
+  margin: 0;
+  font-size: 14px;
+  color: #8ffcff;
+  letter-spacing: 1px;
+}
+
+.info-card p {
+  margin: 4px 0 0;
+  font-size: 16px;
+  font-weight: 600;
+  color: #ffffff;
+}
+
     </style>
     <script>
       function copyIP() {
@@ -525,7 +573,51 @@
         <span class="high">Minecraft content creator</span> from Nepal. I enjoy
         <span class="light">building creative worlds</span>, experimenting with
         game mechanics, and sharing my journey with the gaming community.
-      </p>
+      </p></div>
+      <div class="info-grid">
+  <div class="info-card">
+    <div class="icon">👑</div>
+    <div>
+      <h4>SMP Developer</h4>
+      <p>VenomFun</p>
+    </div>
+  </div>
+ <div class="info-card">
+    <div class="icon">🎮</div>
+    <div>
+      <h4>YOUTUBER</h4>
+      <p>NEPALI Minecraft</p>
+    </div>
+  </div>
+  <div class="info-card">
+    <div class="icon">⚔️</div>
+    <div>
+      <h4>STRENGTHS</h4>
+      <p>PvP • Hosting  • SMP Lore</p>
+    </div>
+  </div>
+
+  <div class="info-card">
+    <div class="icon">👻</div>
+    <div>
+      <h4>FAVORITE Entity</h4>
+      <p>Herobrine</p>
+    </div>
+  </div>
+<div class="info-card">
+    <div class="icon">🥷</div>
+    <div>
+      <h4>PVP LIKE:</h4>
+      <p>Warrior</p>
+    </div>
+  </div>
+  <div class="info-card">
+    <div class="icon">🔥</div>
+    <div>
+      <h4>PLAYSTYLE</h4>
+      <p>Calm, Skilled, Fearless, Strategitic</p> 
+  </div>
+</div>
     </div>
     <h2 class="glowing-I">What I Do</h2>
     <section class="extra-section">
