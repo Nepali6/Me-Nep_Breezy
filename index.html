@@ -85,28 +85,37 @@
       .social-btn {
         display: flex;
         align-items: center;
-        gap: 8px;
-        padding: 8px 16px;
+        gap: 10px;
+        padding: 8px 22px;
         font-weight: bold;
         border-radius: 20px;
         color: white;
         text-decoration: none;
       }
       .discord {
-        background-color: #5865f2;
-        padding: 10px 18px;
-        border-radius: 6px;
-        text-decoration: none;
-        color: #ffffff;
-        font-weight: 700;
-        display: flex;
+        display: inline-flex;
         align-items: center;
-        gap: 8px;
-        transition: 0.3s;
+        gap: 10px;
+        padding: 14px 28px;
+        font-size: 1.3rem;
+        font-weight: 700;
+        color: #000000;
+        text-decoration: none;
+        border-radius: 50px;
+        background: linear-gradient(135deg, #00e5ff, #7b3cff);
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.35);
+        transition: all 0.3s ease;
       }
       .discord:hover {
-        background: #9099ff;
-        transform: translateY(-1px);
+        transform: translateY(-3px);
+        box-shadow: 0 12px 35px rgba(0, 200, 255, 0.6);
+      }
+      .discord-btn .icon {
+        font-size: 1.2rem;
+        transition: transform 0.3s ease;
+      }
+      .discord:hover .icon {
+        transform: translateX(4px);
       }
       .twitter {
         background: #1da1f2;
@@ -115,6 +124,7 @@
       .twitter:hover {
         background: #71c8ff;
         transform: translateY(-1px);
+        box-shadow: 0 12px 35px rgba(0, 200, 255, 0.6);
       }
       .facebook {
         background: #1877f2;
@@ -123,6 +133,7 @@
       .facebook:hover {
         background: #3f92ff;
         transform: translateY(-1px);
+        box-shadow: 0 12px 35px rgba(0, 200, 255, 0.6);
       }
       .social-btn img {
         width: 18px;
@@ -158,11 +169,6 @@
         text-align: center;
         color: white;
       }
-      .extra-section h2 {
-        font-size: 1.8rem;
-        margin-bottom: 15px;
-        color: #55ff55;
-      }
       .card-row {
         display: flex;
         flex-wrap: wrap;
@@ -185,17 +191,18 @@
         text-decoration: none;
       }
       .Venom {
-        background: #2c2ce0;
         padding: 15px 20px;
         border-radius: 10px;
-        font-weight: bold;
+        font-weight: 700;
         min-width: 200px;
         transition: 0.3s ease;
-        color: white;
+        color: rgb(0, 0, 0);
         text-decoration: none;
         margin-left: 550px;
         margin-top: 20px;
         display: inline-block;
+        background: linear-gradient(135deg, #1be8ff, #8a53ff);
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.45);
       }
       .card:hover {
         background: #2c2c8a;
@@ -204,6 +211,7 @@
       .Venom:hover {
         background: #2c2c8a;
         transform: translateY(-5px);
+        color: rgb(255, 255, 255);
       }
       .extra-text {
         max-width: 700px;
@@ -331,7 +339,7 @@
       .glowing-about {
         color: #00ffff;
         text-align: center;
-        font-size: 2rem; /* adjust size if needed */
+        font-size: 2.3rem;
         text-shadow: 0 0 5px #55fff1, 0 0 10px #5efcff, 0 0 15px #55fffc;
         animation: glowPulse 1.5s ease-in-out infinite alternate;
         margin-top: 10px;
@@ -345,6 +353,26 @@
         }
         100% {
           text-shadow: 0 0 3px #55ffeb, 0 0 6px #00ffcc;
+        }
+      }
+      .glowing-I {
+        color: #b0ffff;
+        text-align: center;
+        font-size: 2.3rem;
+        text-shadow: 0 0 10px purple, 0 0 20px rgb(154, 0, 154),
+          0 0 40px rgb(188, 0, 188);
+        animation: glow 1.5s ease-in-out infinite alternate;
+        margin-top: 10px;
+      }
+      @keyframes glow {
+        0% {
+          text-shadow: 0 0 3px #c845d1, 0 0 6px #eb03d4;
+        }
+        50% {
+          text-shadow: 0 0 8px #c93cd8, 0 0 15px #b21cd7;
+        }
+        100% {
+          text-shadow: 0 0 3px #b433c5, 0 0 6px #ab18e1;
         }
       }
       .glowing-footer {
@@ -379,79 +407,74 @@
       }
       /* ===== GOALS SECTION STYLE ===== */
 
-.goal-section {
-  max-width: 1200px;
-  margin: 80px auto;
-  padding: 0 20px;
-  text-align: center;
-}
+      .goal-section {
+        max-width: 1200px;
+        margin: 80px auto;
+        padding: 0 20px;
+        text-align: center;
+      }
+      .goal-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+        gap: 20px;
+      }
 
-.goal-title {
-  font-size: 2.3rem;
-  margin-bottom: 35px;
-  color: #9ffcff;
-  text-shadow: 0 0 12px rgba(0, 255, 255, 0.5);
-}
+      .goal-box {
+        background: linear-gradient(145deg, #101428, #151a30);
+        border-radius: 16px;
+        padding: 25px 20px;
+        font-size: 1.05rem;
+        color: #e7faff;
+        font-weight: 600;
+        text-align: center;
+        transition: 0.35s ease;
+        box-shadow: 0 0 0 1px rgba(0, 255, 255, 0.25),
+          0 0 20px rgba(0, 255, 255, 0.15);
+      }
 
-.goal-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-  gap: 20px;
-}
+      .goal-box:hover {
+        transform: translateY(-6px) scale(1.02);
+        box-shadow: 0 0 0 1px rgba(0, 255, 255, 0.5),
+          0 0 35px rgba(0, 255, 255, 0.4);
+      }
 
-.goal-box {
-  background: linear-gradient(145deg, #101428, #151a30);
-  border-radius: 16px;
-  padding: 25px 20px;
-  font-size: 1.05rem;
-  color: #e7faff;
-  font-weight: 600;
-  text-align: center;
-  transition: 0.35s ease;
-  box-shadow:
-    0 0 0 1px rgba(0, 255, 255, 0.25),
-    0 0 20px rgba(0, 255, 255, 0.15);
-}
+      .about-card {
+        max-width: 900px;
+        margin: 60px auto;
+        padding: 30px 35px;
+        border-radius: 18px;
+        background: linear-gradient(135deg, #11263c, #152035);
+        color: #e5f7ff;
+        font-size: 1.15rem;
+        line-height: 1.8;
+        box-shadow: 0 0 25px rgba(0, 180, 255, 0.25),
+          inset 0 0 25px rgba(0, 155, 155, 0.05);
+        transition: 0.4s ease;
+      }
 
-.goal-box:hover {
-  transform: translateY(-6px) scale(1.02);
-  box-shadow:
-    0 0 0 1px rgba(0, 255, 255, 0.5),
-    0 0 35px rgba(0, 255, 255, 0.4);
-}
-.about-card {
-  max-width: 900px;
-  margin: 60px auto;
-  padding: 30px 35px;
-  border-radius: 18px;
-  background: linear-gradient(135deg, #11263c, #152035);
-  color: #e5f7ff;
-  font-size: 1.15rem;
-  line-height: 1.8;
-  box-shadow:
-    0 0 25px rgba(0, 180, 255, 0.25),
-    inset 0 0 25px rgba(0, 155, 155, 0.05);
-  transition: 0.4s ease;
-}
-
-.about-card:hover {
-  transform: translateY(-6px);
-  box-shadow:
-    0 0 40px rgba(0, 180, 255, 0.45),
-    inset 0 0 35px rgba(0, 255, 255, 0.141);
-}
-.about-card .high {
-  color: #ff0000;
-  font-weight: 600;
-}
-.about-card .highlight {
-  color: #00eaff;
-  font-weight: 600;
-}
-.about-card .light {
-  color: #00eaff;
-}
+      .about-card:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 0 40px rgba(0, 180, 255, 0.45),
+          inset 0 0 35px rgba(0, 255, 255, 0.141);
+      }
+      .about-card .high {
+        color: #ff0000;
+        font-weight: 600;
+      }
+      .about-card .highlight {
+        color: #00eaff;
+        font-weight: 600;
+      }
+      .about-card .light {
+        color: #00eaff;
+      }
     </style>
+    <script>
+      function copyIP() {
+        navigator.clipboard.writeText("bloodyvenom.xav.lat:19134");
+        alert("IP copied: bloodyvenom.xav.lat:19134");
+      }
+    </script>
   </head>
   <body>
     <!-- INTRO SCREEN -->
@@ -474,7 +497,7 @@
     </header>
     <nav>
       <div class="nav-left">
-        <a href="index.html"><b>HOME</b></a>
+        <a href="https://nepali6.github.io/Me-Nep_Breezy/"><b>HOME</b></a>
       </div>
 
       <div class="nav-right">
@@ -492,19 +515,20 @@
     <div class="content fade-in delay-2">
       <button class="join-btn" onclick="copyIP()">
         Join Now – bloodyvenom.xav.lat:19134
-      </button></div>
-      <div class="glowing-about">🎮 <b>About Me</b> <br /></div>
-      <div class="about-card">
-  <p>
-    I'm <span class="highlight">Kshitiz</span>, also known as 
-    <span class="highlight">Nep_Breezy</span>, a passionate 
-    <span class="high">Minecraft content creator</span> from Nepal.
-    I enjoy <span class="light">building creative worlds</span>, experimenting with game mechanics,
-    and sharing my journey with the gaming community.
-  </p>
-</div>
+      </button>
+    </div>
+    <div class="glowing-about">🎮 <b>About Me</b> <br /></div>
+    <div class="about-card">
+      <p>
+        I'm <span class="highlight">Kshitiz</span>, also known as
+        <span class="highlight">Nep_Breezy</span>, a passionate
+        <span class="high">Minecraft content creator</span> from Nepal. I enjoy
+        <span class="light">building creative worlds</span>, experimenting with
+        game mechanics, and sharing my journey with the gaming community.
+      </p>
+    </div>
+    <h2 class="glowing-I">What I Do</h2>
     <section class="extra-section">
-      <h2 class="glowing-about">What I Do</h2>
       <div class="card-row fade-in delay-3">
         <div class="card">🎮 Minecraft Content Creation</div>
         <div class="card">⚙️ Custom Server Development</div>
@@ -518,17 +542,16 @@
         <div class="card">🛡️ Cyber Security</div>
       </div>
     <section class="goal-section">
-  <h2 class="goal-title">My Goals</h2>
-
-  <div class="goal-grid">
-    <div class="goal-box">🔥 Strong Minecraft Community</div>
-    <div class="goal-box">⚔️ High Quality PvP Experience</div>
-    <div class="goal-box">🛠️ Advanced Custom Servers</div>
-    <div class="goal-box">🎮 Fun & Fair Gameplay</div>
-    <div class="goal-box">🚀 Constant Updates & Events</div>
-    <div class="goal-box">🧠 Learning & Improving Daily</div>
-  </div>
-</section>
+      <h2 class="glowing-about">My Goals</h2>
+      <div class="goal-grid">
+        <div class="goal-box">🔥 Strong Minecraft Community</div>
+        <div class="goal-box">⚔️ High Quality PvP Experience</div>
+        <div class="goal-box">🛠️ Advanced Custom Servers</div>
+        <div class="goal-box">🎮 Fun & Fair Gameplay</div>
+        <div class="goal-box">🚀 Constant Updates & Events</div>
+        <div class="goal-box">🧠 Learning & Improving Daily</div>
+      </div>
+    </section>
     <div class="social-center fade-in delay-4r">
       <a
         href="https://discord.gg/tVMW5rhnQ"
@@ -539,6 +562,7 @@
           src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/discord.svg"
         />
         Discord
+        <span class="icon">↗</span>
       </a>
 
       <a
@@ -563,7 +587,8 @@
         Facebook
       </a>
     </div>
-    <footer><hr>
+    <footer>
+      <hr />
       <p class="glowing-footer">
         <span
           style="
