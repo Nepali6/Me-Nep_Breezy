@@ -18,7 +18,7 @@
         background-color: rgb(74, 29, 92);
         font-size: 1.5rem;
         padding: 1px;
-        color: rgb(133, 247, 255);
+        color: rgb(195, 251, 255);
       }
       footer {
         color: #e0ffff;
@@ -28,7 +28,8 @@
       }
       h1 {
         text-align: center;
-        text-shadow: 0 0 5px #55ffc3, 0 0 10px #00ffcc, 0 0 15px #55fffc;
+        text-shadow: 0 0 5px #00fff7, 0 0 10px #00e5ff, 0 0 15px #00ddff;
+        font-weight: 800;
       }
       img {
         width: 80px;
@@ -42,12 +43,13 @@
       }
       .subtitle {
         font-family: "Press Start 2P", cursive;
-        font-size: 1.3rem;
+        font-size: 1.4rem;
         color: #55ff55;
         text-shadow: 3px 3px 0 #000000, 4px 4px 0 #003f00;
         margin-top: 1rem;
         letter-spacing: 2px;
         text-align: center;
+        font-weight: 600;
       }
       .join-btn {
         margin-top: 5px;
@@ -58,13 +60,13 @@
         border-radius: 8px;
         border: none;
         cursor: pointer;
-        background-color: #99aec22e;
-        color: #ffffff;
+        background: linear-gradient(135deg, rgb(0, 183, 255), rgb(0, 102, 255));
+        color: #000000;
         transition: 0.3s;
       }
       .join-btn:hover {
-        background-color: #99aec2;
-        color: #0d1f2e;
+        transform: translateY(-2px);
+        box-shadow: 0 12px 35px rgba(18, 172, 214, 0.6);
       }
       .content {
         max-width: 900px;
@@ -165,9 +167,12 @@
       .extra-section {
         max-width: 900px;
         margin: 50px auto;
-        padding: 0 20px;
+        padding: 0 10px;
         text-align: center;
         color: white;
+      }
+      hr {
+        max-width: 1100px;
       }
       .card-row {
         display: flex;
@@ -181,14 +186,15 @@
         flex-wrap: wrap;
       }
       .card {
-        background: #242456;
-        padding: 15px 20px;
+        background: linear-gradient(135deg, rgb(27, 4, 155), #08032e);
+        padding: 25px 10px;
         border-radius: 10px;
         font-weight: bold;
         min-width: 200px;
         transition: 0.3s ease;
         color: white;
         text-decoration: none;
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.45);
       }
       .Venom {
         padding: 15px 20px;
@@ -209,7 +215,7 @@
         transform: translateY(-5px);
       }
       .Venom:hover {
-        background: #2c2c8a;
+        background: #1e1e5f;
         transform: translateY(-5px);
         color: rgb(255, 255, 255);
       }
@@ -274,7 +280,7 @@
         left: 0;
         width: 100%;
         height: 100%;
-        background: #0f0f4d;
+        background: #090930;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -408,21 +414,21 @@
       /* ===== GOALS SECTION STYLE ===== */
 
       .goal-section {
-        max-width: 1200px;
+        max-width: 800px;
         margin: 80px auto;
-        padding: 0 20px;
+        padding: 0 1px;
         text-align: center;
       }
       .goal-grid {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-        gap: 20px;
+        gap: 30px;
       }
 
       .goal-box {
         background: linear-gradient(145deg, #101428, #151a30);
         border-radius: 16px;
-        padding: 25px 20px;
+        padding: 40px 40px;
         font-size: 1.05rem;
         color: #e7faff;
         font-weight: 600;
@@ -469,53 +475,52 @@
         color: #00eaff;
       }
       .info-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 20px;
-  max-width: 1000px;
-  margin: 40px auto;
-}
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        gap: 20px;
+        max-width: 1000px;
+        margin: 40px auto;
+      }
 
-.info-card {
-  display: flex;
-  align-items: center;
-  gap: 15px;
-  padding: 22px 24px;
-  background: linear-gradient(145deg, #0d1220, #141a2b);
-  border-radius: 18px;
-  color: #ffffff;
-  box-shadow: 0 0 0 1px rgba(0,255,255,0.15),
-              0 10px 30px rgba(0,0,0,0.6);
-  transition: 0.3s ease;
-}
+      .info-card {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        padding: 22px 24px;
+        background: linear-gradient(145deg, #0d1220, #141a2b);
+        border-radius: 18px;
+        color: #ffffff;
+        box-shadow: 0 0 0 1px rgba(0, 255, 255, 0.15),
+          0 10px 30px rgba(0, 0, 0, 0.6);
+        transition: 0.3s ease;
+      }
 
-.info-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 0 25px rgba(0,255,255,0.45);
-}
+      .info-card:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 0 25px rgba(0, 255, 255, 0.45);
+      }
 
-.info-card .icon {
-  font-size: 28px;
-  color: #00f6ff;
-  background: rgba(0,255,255,0.1);
-  padding: 12px;
-  border-radius: 12px;
-}
+      .info-card .icon {
+        font-size: 28px;
+        color: #00f6ff;
+        background: rgba(0, 255, 255, 0.1);
+        padding: 12px;
+        border-radius: 12px;
+      }
 
-.info-card h4 {
-  margin: 0;
-  font-size: 14px;
-  color: #8ffcff;
-  letter-spacing: 1px;
-}
+      .info-card h4 {
+        margin: 0;
+        font-size: 14px;
+        color: #8ffcff;
+        letter-spacing: 1px;
+      }
 
-.info-card p {
-  margin: 4px 0 0;
-  font-size: 16px;
-  font-weight: 600;
-  color: #ffffff;
-}
-
+      .info-card p {
+        margin: 4px 0 0;
+        font-size: 16px;
+        font-weight: 600;
+        color: #ffffff;
+      }
     </style>
     <script>
       function copyIP() {
@@ -573,51 +578,52 @@
         <span class="high">Minecraft content creator</span> from Nepal. I enjoy
         <span class="light">building creative worlds</span>, experimenting with
         game mechanics, and sharing my journey with the gaming community.
-      </p></div>
-      <div class="info-grid">
-  <div class="info-card">
-    <div class="icon">👑</div>
-    <div>
-      <h4>SMP Developer</h4>
-      <p>VenomFun</p>
+      </p>
     </div>
-  </div>
- <div class="info-card">
-    <div class="icon">🎮</div>
-    <div>
-      <h4>YOUTUBER</h4>
-      <p>NEPALI Minecraft</p>
-    </div>
-  </div>
-  <div class="info-card">
-    <div class="icon">⚔️</div>
-    <div>
-      <h4>STRENGTHS</h4>
-      <p>PvP • Hosting  • SMP Lore</p>
-    </div>
-  </div>
+    <div class="info-grid">
+      <div class="info-card">
+        <div class="icon">👑</div>
+        <div>
+          <h4>SMP Developer</h4>
+          <p>VenomFun</p>
+        </div>
+      </div>
+      <div class="info-card">
+        <div class="icon">🎮</div>
+        <div>
+          <h4>YOUTUBER</h4>
+          <p>NEPALI Minecraft</p>
+        </div>
+      </div>
+      <div class="info-card">
+        <div class="icon">⚔️</div>
+        <div>
+          <h4>STRENGTHS</h4>
+          <p>PvP • Hosting • SMP Lore</p>
+        </div>
+      </div>
 
-  <div class="info-card">
-    <div class="icon">👻</div>
-    <div>
-      <h4>FAVORITE Entity</h4>
-      <p>Herobrine</p>
-    </div>
-  </div>
-<div class="info-card">
-    <div class="icon">🥷</div>
-    <div>
-      <h4>PVP LIKE:</h4>
-      <p>Warrior</p>
-    </div>
-  </div>
-  <div class="info-card">
-    <div class="icon">🔥</div>
-    <div>
-      <h4>PLAYSTYLE</h4>
-      <p>Calm, Skilled, Fearless, Strategitic</p> 
-  </div>
-</div>
+      <div class="info-card">
+        <div class="icon">👻</div>
+        <div>
+          <h4>FAVORITE Entity</h4>
+          <p>Herobrine</p>
+        </div>
+      </div>
+      <div class="info-card">
+        <div class="icon">🥷</div>
+        <div>
+          <h4>PVP LIKE:</h4>
+          <p>Warrior</p>
+        </div>
+      </div>
+      <div class="info-card">
+        <div class="icon">🔥</div>
+        <div>
+          <h4>PLAYSTYLE</h4>
+          <p>Calm, Skilled, Fearless, Strategitic</p>
+        </div>
+      </div>
     </div>
     <h2 class="glowing-I">What I Do</h2>
     <section class="extra-section">
@@ -633,16 +639,23 @@
         <div class="card">🤖 Machine Learning</div>
         <div class="card">🛡️ Cyber Security</div>
       </div>
-    <section class="goal-section">
-      <h2 class="glowing-about">My Goals</h2>
-      <div class="goal-grid">
-        <div class="goal-box">🔥 Strong Minecraft Community</div>
-        <div class="goal-box">⚔️ High Quality PvP Experience</div>
-        <div class="goal-box">🛠️ Advanced Custom Servers</div>
-        <div class="goal-box">🎮 Fun & Fair Gameplay</div>
-        <div class="goal-box">🚀 Constant Updates & Events</div>
-        <div class="goal-box">🧠 Learning & Improving Daily</div>
-      </div>
+      <section class="goal-section">
+        <h2 class="glowing-about">My Goals</h2>
+        <div class="goal-grid">
+          <div class="goal-box">
+            🔥<br />
+            Strong Minecraft Community
+          </div>
+          <div class="goal-box">⚔️ <br />High Quality PvP Experience</div>
+          <div class="goal-box">🛠️ <br />Advanced Custom Servers</div>
+          <div class="goal-box">🎮 <br />Fun & Fair Gameplay</div>
+          <div class="goal-box">🚀 <br />Constant Updates & Events</div>
+          <div class="goal-box">
+            🧠<br />
+            Learning & Improving Daily
+          </div>
+        </div>
+      </section>
     </section>
     <div class="social-center fade-in delay-4r">
       <a
