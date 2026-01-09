@@ -187,7 +187,11 @@
         flex-wrap: wrap;
       }
       .card {
-        background: linear-gradient(135deg, rgb(4 1 31), #1e1a3e);
+        background: linear-gradient(
+          90deg,
+          rgba(2, 0, 36, 1) 71%,
+          rgba(0, 0, 87, 1) 100%
+        );
         padding: 25px 10px;
         border-radius: 10px;
         font-weight: bold;
@@ -350,7 +354,7 @@
       .glowing-about {
         color: #00ffff;
         text-align: center;
-        font-size: 2.5rem;
+        font-size: 3rem;
         text-shadow: 0 0 5px #55fff1, 0 0 10px #5efcff, 0 0 15px #55fffc;
         margin-top: 10rem;
         animation: glowPulse 1.5s ease-in-out infinite alternate;
@@ -367,23 +371,24 @@
         }
       }
       .glowing-I {
-        color: #b0ffff;
+        color: rgb(255, 208, 244);
         text-align: center;
-        font-size: 2.5rem;
-        text-shadow: 0 0 10px purple, 0 0 20px rgb(154, 0, 154),
-          0 0 40px rgb(188, 0, 188);
+        font-size: 3rem;
+        font-weight: 800;
+        text-shadow: 0 0 10px rgb(255, 0, 255), 0 0 20px rgb(255, 0, 255),
+          0 0 40px rgb(255, 0, 255), 0 0 80px rgb(255, 0, 255);
         animation: glow 1.5s ease-in-out infinite alternate;
         margin-top: 15rem;
       }
       @keyframes glow {
         0% {
-          text-shadow: 0 0 3px #c845d1, 0 0 6px #eb03d4;
+          text-shadow: 0 0 5px #ee00ff, 0 0 10px #ff00e6;
         }
         50% {
-          text-shadow: 0 0 8px #c93cd8, 0 0 15px #b21cd7;
+          text-shadow: 0 0 10px #e600ff, 0 0 20px #ff00ee;
         }
         100% {
-          text-shadow: 0 0 3px #b433c5, 0 0 6px #ab18e1;
+          text-shadow: 0 0 5px #ff00dd, 0 0 10px #ff00cc;
         }
       }
       .glowing-footer {
@@ -536,8 +541,8 @@
       .avatar-container {
         display: flex;
         justify-content: center; /* centers horizontally */
-        margin-top: 40px;
-        margin-bottom: 20px;
+        margin-top: 1px;
+        margin-bottom: 5rem;
       }
 
       .avatar-img {
@@ -547,7 +552,7 @@
         object-fit: cover;
         border: 4px solid rgba(85, 234, 254, 0.518);
         box-shadow: 0 4px 35px rgb(0, 200, 255);
-        margin-top: 10rem;
+        margin-top: 5rem;
       }
       * {
         box-sizing: border-box;
@@ -905,6 +910,188 @@
           margin: 30px 0;
         }
       }
+      .bounce {
+        -webkit-animation: bounce 2s infinite both;
+        animation: bounce 2s infinite both;
+      }
+      @-webkit-keyframes bounce {
+        0% {
+          -webkit-transform: translateY(-45px);
+          transform: translateY(-45px);
+          -webkit-animation-timing-function: ease-in;
+          animation-timing-function: ease-in;
+          opacity: 1;
+        }
+        24% {
+          opacity: 1;
+        }
+        40% {
+          -webkit-transform: translateY(-24px);
+          transform: translateY(-24px);
+          -webkit-animation-timing-function: ease-in;
+          animation-timing-function: ease-in;
+        }
+        65% {
+          -webkit-transform: translateY(-12px);
+          transform: translateY(-12px);
+          -webkit-animation-timing-function: ease-in;
+          animation-timing-function: ease-in;
+        }
+        82% {
+          -webkit-transform: translateY(-6px);
+          transform: translateY(-6px);
+          -webkit-animation-timing-function: ease-in;
+          animation-timing-function: ease-in;
+        }
+        93% {
+          -webkit-transform: translateY(-4px);
+          transform: translateY(-4px);
+          -webkit-animation-timing-function: ease-in;
+          animation-timing-function: ease-in;
+        }
+        25%,
+        55%,
+        75%,
+        87% {
+          -webkit-transform: translateY(0px);
+          transform: translateY(0px);
+          -webkit-animation-timing-function: ease-out;
+          animation-timing-function: ease-out;
+        }
+        100% {
+          -webkit-transform: translateY(0px);
+          transform: translateY(0px);
+          -webkit-animation-timing-function: ease-out;
+          animation-timing-function: ease-out;
+          opacity: 1;
+        }
+      }
+      @keyframes bounce {
+        0% {
+          -webkit-transform: translateY(-45px);
+          transform: translateY(-45px);
+          -webkit-animation-timing-function: ease-in;
+          animation-timing-function: ease-in;
+          opacity: 1;
+        }
+        24% {
+          opacity: 1;
+        }
+        40% {
+          -webkit-transform: translateY(-24px);
+          transform: translateY(-24px);
+          -webkit-animation-timing-function: ease-in;
+          animation-timing-function: ease-in;
+        }
+        65% {
+          -webkit-transform: translateY(-12px);
+          transform: translateY(-12px);
+          -webkit-animation-timing-function: ease-in;
+          animation-timing-function: ease-in;
+        }
+        82% {
+          -webkit-transform: translateY(-6px);
+          transform: translateY(-6px);
+          -webkit-animation-timing-function: ease-in;
+          animation-timing-function: ease-in;
+        }
+        93% {
+          -webkit-transform: translateY(-4px);
+          transform: translateY(-4px);
+          -webkit-animation-timing-function: ease-in;
+          animation-timing-function: ease-in;
+        }
+        25%,
+        55%,
+        75%,
+        87% {
+          -webkit-transform: translateY(0px);
+          transform: translateY(0px);
+          -webkit-animation-timing-function: ease-out;
+          animation-timing-function: ease-out;
+        }
+        100% {
+          -webkit-transform: translateY(0px);
+          transform: translateY(0px);
+          -webkit-animation-timing-function: ease-out;
+          animation-timing-function: ease-out;
+          opacity: 1;
+        }
+      }
+      .shake {
+        -webkit-animation: shake-horizontal 5s
+          cubic-bezier(0.55, 0.085, 0.68, 0.53) 1s infinite both;
+        animation: shake-horizontal 5s cubic-bezier(0.55, 0.085, 0.68, 0.53) 1s
+          infinite both;
+      }
+      /* ----------------------------------------------
+ * Generated by Animista on 2026-1-10 0:15:27
+ * Licensed under FreeBSD License.
+ * See http://animista.net/license for more info. 
+ * w: http://animista.net, t: @cssanimista
+ * ---------------------------------------------- */
+
+      /**
+ * ----------------------------------------
+ * animation shake-horizontal
+ * ----------------------------------------
+ */
+      @-webkit-keyframes shake-horizontal {
+        0%,
+        100% {
+          -webkit-transform: translateX(0);
+          transform: translateX(0);
+        }
+        10%,
+        30%,
+        50%,
+        70% {
+          -webkit-transform: translateX(-10px);
+          transform: translateX(-10px);
+        }
+        20%,
+        40%,
+        60% {
+          -webkit-transform: translateX(10px);
+          transform: translateX(10px);
+        }
+        80% {
+          -webkit-transform: translateX(8px);
+          transform: translateX(8px);
+        }
+        90% {
+          -webkit-transform: translateX(-8px);
+          transform: translateX(-8px);
+        }
+      }
+      @keyframes shake-horizontal {
+        0%,
+        100% {
+          -webkit-transform: translateX(0);
+          transform: translateX(0);
+        }
+        10%,
+        30%,
+        50%,
+        70% {
+          -webkit-transform: translateX(-10px);
+          transform: translateX(-10px);
+        }
+        20%,
+        40%,
+        60% {
+          -webkit-transform: translateX(10px);
+          transform: translateX(10px);
+        }
+        80% {
+          -webkit-transform: translateX(8px);
+          transform: translateX(8px);
+        }
+        90% {
+          -webkit-transform: translateX(-8px);
+          transform: translateX(-8px);
+        }
+      }
     </style>
     <script>
       function copyIP() {
@@ -948,7 +1135,7 @@
     <div class="subtitle floating">
       » NEPALI Minecraft YOUTUBER & Minecraft Server Dev «
     </div>
-    <div class="content fade-in delay-2">
+    <div class="content fade-in delay-2 shake">
       <button class="join-btn" onclick="copyIP()">
         Join Now – bloodyvenom.xav.lat:19134
       </button>
@@ -960,7 +1147,7 @@
         class="avatar-img"
       />
     </div>
-    <div class="venom-wrapper">
+    <div class="venom-wrapper bounce">
       <a href="https://nep-breezy.vercel.app/" class="Venom">
         🐍 Venom SMP Developer Click here Know
       </a>
