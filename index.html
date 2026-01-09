@@ -714,6 +714,197 @@
           --angle: 360deg;
         }
       }
+      * {
+        box-sizing: border-box;
+      }
+      .frontendfocus-container {
+        width: 100%;
+        height: 8vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 10rem;
+      }
+      .frontendfocus-container a {
+        min-width: 340px;
+        font-size: 18px;
+        position: relative;
+        display: inline-block;
+        padding: 30px 30px;
+        margin: 12px 0;
+        margin-right: 50px;
+        color: rgb(255, 77, 0);
+        text-decoration: none;
+        text-transform: uppercase;
+        transition: 0.5s;
+        letter-spacing: 4px;
+        overflow: hidden;
+        font-weight: 700;
+      }
+      .neon-1 {
+        color: #ff6a00;
+      }
+      .neon-1 a:hover {
+        background: #ff6a00;
+        color: #050801;
+        box-shadow: 0 0 5px #ff6a00 0 0 25px #ff6a00 0 0 50px #ff6a00 0 0 200px
+          #ff6a00;
+        -webkit-box-reflect: below 0px linear-gradient(transparent, #0004);
+      }
+      .neon-2 {
+        color: #00bfff;
+      }
+      .neon-2 a:hover {
+        background: #00bfff;
+        color: #050801;
+        box-shadow: 0 0 5px #00bfff 0 0 25px #00bfff 0 0 50px #00bfff 0 0 200px
+          #00bfff;
+        -webkit-box-reflect: below 0px linear-gradient(transparent, #0005);
+      }
+      .frontendfocus-container a:nth-child(1) {
+        filter: hue-rotate(270deg);
+      }
+
+      .frontendfocus-container a:nth-child(2) {
+        filter: hue-rotate(110deg);
+      }
+
+      .neon-1 a {
+        color: #ff6a00; /* orange */
+      }
+
+      .neon-2 a {
+        color: #00bfff; /* blue / green */
+      }
+      .frontendfocus-container a span {
+        position: absolute;
+        display: block;
+      }
+      .neon-1 a span:nth-child(1) {
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        background: linear-gradient(90deg, transparent, #ff6a00);
+        animation: glowLineRight 1.5s linear infinite;
+      }
+
+      .neon-2 a span:nth-child(2) {
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        background: linear-gradient(90deg, transparent, #00bfff);
+        animation: glowLineRight 1.5s linear infinite;
+      }
+      .neon-1 a span:nth-child(3) {
+        bottom: 0;
+        right: 0;
+        width: 100%;
+        height: 2px;
+        background: linear-gradient(270deg, transparent, #ff6a00);
+        animation: glowLineLeft 1.5s linear infinite;
+        animation-delay: 0.5s;
+      }
+
+      /* Bottom border animation btn-2*/
+      .neon-2 a span:nth-child(3) {
+        bottom: 0;
+        right: 0;
+        width: 100%;
+        height: 2px;
+        background: linear-gradient(270deg, transparent, #00bfff);
+        animation: glowLineLeft 1.5s linear infinite;
+        animation-delay: 0.5s;
+      }
+
+      /* Left border animation btn-1*/
+      .neon-1 a span:nth-child(4) {
+        bottom: -100%;
+        left: 0;
+        width: 2px;
+        height: 100%;
+        background: linear-gradient(360deg, transparent, #ff6a00);
+        animation: glowLineUp 1.5s linear infinite;
+        animation-delay: 0.75s;
+      }
+
+      /* Left border animation btn-2 */
+      .neon-2 a span:nth-child(4) {
+        bottom: -100%;
+        left: 0;
+        width: 2px;
+        height: 100%;
+        background: linear-gradient(360deg, transparent, #00bfff);
+        animation: glowLineUp 1.5s linear infinite;
+        animation-delay: 0.75s;
+      }
+
+      /* Top border animation keyframes */
+      @keyframes glowLineRight {
+        0% {
+          left: -100%;
+        }
+
+        50%,
+        100% {
+          left: 100%;
+        }
+      }
+
+      /* Right border animation keyframes */
+      @keyframes glowLineDown {
+        0% {
+          top: -100%;
+        }
+
+        50%,
+        100% {
+          top: 100%;
+        }
+      }
+
+      /* Bottom border animation keyframes */
+      @keyframes glowLineLeft {
+        0% {
+          right: -100%;
+        }
+
+        50%,
+        100% {
+          right: 100%;
+        }
+      }
+
+      /* Left border animation keyframes */
+      @keyframes glowLineUp {
+        0% {
+          bottom: -100%;
+        }
+
+        50%,
+        100% {
+          bottom: 100%;
+        }
+      }
+
+      @media screen and (max-width: 768px) {
+        .frontendfocus-container {
+          flex-direction: column;
+          gap: 50px;
+          height: 80vh;
+        }
+
+        .frontendfocus-containera {
+          min-width: 350px;
+          font-size: 18px;
+          position: relative;
+          display: inline-block;
+          padding: 20px 25px 20px 25px;
+          margin: 50px 0;
+          margin: 30px 0;
+        }
+      }
     </style>
     <script>
       function copyIP() {
@@ -745,7 +936,9 @@
       <div class="nav-left">
         <a href="https://nepali6.github.io/Me-Nep_Breezy/"><b>HOME</b></a>
       </div>
-
+      <div class="nav-middle">
+        <a href="form.html"><b>REGISTER HERE</b></a>
+      </div>
       <div class="nav-right">
         <a href="https://venomfun.vercel.app/" target="_blank"
           ><b>SERVER INFO</b></a
@@ -922,6 +1115,26 @@
           <a href="#">Read more</a>
         </div>
       </article>
+    </div>
+    <div class="frontendfocus-container">
+      <div class="neon-1">
+        <a href="javascript:;">
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          Reveal What’s Hidden
+        </a>
+      </div>
+      <div class="neon-2">
+        <a href="javascript:;">
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          Unlock the Portal
+        </a>
+      </div>
     </div>
     <div class="social-center fade-in delay-4r">
       <a
