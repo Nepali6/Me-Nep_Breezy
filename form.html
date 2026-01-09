@@ -1,0 +1,246 @@
+<!doctype html> 
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="">
+        <title>My Form</title>
+        <style>
+            /* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Roboto, Arial, sans-serif;
+}
+
+html, body {
+  width: 100%;
+  min-height: 100vh;
+  background: #050a26;
+  color: #ffffff;
+}
+
+/* Page heading */
+h1 {
+  font-size: 2rem;
+  background-color: #050a26; /* solid header color */
+  color: #ffffff;
+  padding: 20px;
+  text-align: center;
+  letter-spacing: 1px;
+  width: 100%;
+  margin: 0;
+  border-radius: 0;
+}
+
+/* Login anchor button */
+.login-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin: 1rem auto;
+  padding: 10px 26px;
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0.4px;
+  color: #ffffff;
+  text-decoration: none;
+  background: #2563eb;
+  border-radius: 6px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  margin-left: 5rem;
+}
+
+.login-btn:hover {
+  background: #1e40af;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.3);
+}
+
+/* Form container */
+form {
+  margin: 0;
+  width: 100%;
+  max-width: 100%;
+  background: #0b102f;
+  padding: 2rem;
+  border-radius: 0;
+  box-shadow: none;
+  color: #e5e7eb;
+  font-size: 1rem;
+  line-height: 1.6;
+  display: flex;
+  flex-wrap: wrap;   /* allow fields and image next to each other */
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+/* Image */
+img {
+  width: 320px;
+  height: auto;
+  float: none;        
+  margin-left: 0;
+  border-radius: 8px;
+  flex-shrink: 0;     
+}
+
+/* Inputs, selects (half width), textarea full width */
+input,
+select {
+  padding: 10px 12px;
+  margin: 6px 0;
+  border-radius: 6px;
+  border: 1px solid #374151;
+  background: #111827;
+  color: #ffffff;
+  font-size: 0.95rem;
+  width: calc(50% - 0.5rem); /* half-width */
+  box-sizing: border-box;
+}
+
+textarea {
+  width: 100%;  /* full width */
+  padding: 10px 12px;
+  border-radius: 6px;
+  border: 1px solid #374151;
+  background: #111827;
+  color: #ffffff;
+  font-size: 0.95rem;
+  resize: vertical;
+  margin-bottom: 1rem;
+}
+
+/* Focus effect */
+input:focus,
+select:focus,
+textarea:focus {
+  outline: none;
+  border-color: #2563eb;
+  box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.35);
+}
+
+/* Submit button */
+.submit {
+  height: 46px;
+  width: 180px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #ffffff;
+  background: #16a34a;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-top: 1rem;
+}
+
+.submit:hover {
+  background: #15803d;
+}
+
+/* Reset button */
+.reset {
+  height: 36px;
+  width: 100px;
+  font-size: 0.85rem;
+  background: #374151;
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-top: 1rem;
+}
+
+.reset:hover {
+  background: #4b5563;
+}
+
+/* Links */
+a {
+  color: #60a5fa;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Checkbox label */
+label {
+  font-size: 0.9rem;
+  color: #d1d5db;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  form {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  input,
+  select {
+    width: 100%;  /* full width on mobile */
+  }
+
+  img {
+    margin: 1rem auto;
+    width: 100%;
+    max-width: 300px;
+  }
+}
+
+        </style>
+    </head>
+    <body>
+     <h1>REGISTRATION FOR JOIN WITH MASTER KSHITIZ</h1>
+    <a class="navbar-link login-btn active" href="login.html">Login Here</a>
+      <form wire:snapshot="{&quot;data&quot;:{&quot;email&quot;:&quot;&quot;,&quot;password&quot;:&quot;&quot;
+        ,&quot;remember&quot;:false,&quot;captcha&quot;:&quot;&quot;},&quot;memo&quot;:{&quot;id&quot;:&quot;YckcLK8FO21FEbcWi2UL&quot;,&quot;
+        name&quot;:&quot;auth.login&quot;,&quot;path&quot;:&quot;login&quot;,&quot;method&quot;:&quot;GET&quot;,&quot;release&quot;:&quot;
+        a-a-a&quot;,&quot;children&quot;:[],&quot;scripts&quot;:[&quot;3343938958-1&quot;],&quot;assets&quot;:[&quot;3343938958-0&quot;],&quot;
+        errors&quot;:[],&quot;locale&quot;:&quot;en&quot;},&quot;checksum&quot;:&quot;70ea3b20ca83e5b3455c35469f4062db6d848080f558cd81b1f97c7cc82ee346&
+        quot;}" wire:effects="{&quot;partials&quot;:[],&quot;scripts&quot;:{&quot;3343938958-1&quot;:&quot;&lt;script&gt;\n    renderTurnstile();\n&lt;
+        \/script&gt;\n    &quot;}}" wire:id="YckcLK8FO21FEbcWi2UL" class="mx-auto flex flex-col gap-2 mt-4 px-6 sm:px-14 pb-10 bg-primary-800 rounded-md
+     xl:max-w-[40%] w-full" wire:submit="submit" id="login"> <a href=""></a> <img src="/Me.png">
+    <b>Enter Your First Name: <input type="text" name="firstname"><br>
+    Enter Your Second Name: <input type="text" name="Secondname"> <br><br>
+    Enter Your Password: <input type="password"><br>
+    Enter Your Phone No.: <input type="number"> <br><br>
+    Enter Your age: <input type="number"><br>
+    Date Of Birth: <input type="date"><br><br>
+    Email: <input type="email"><br>
+    Password: <input type="password"><br><br>
+    Select Your Gender <br><input type="radio" name="Gender" value="Male">Male
+    <input type="radio" name="Gender" value="Female">FeMale
+    <input type="radio" name="Gender" value="Other">Other<br><br>
+      Your Province <select name="Province" id="Province">
+        <option value="Koshi">Koshi</option>
+        <option value="Madesh">Madesh</option>
+        <option value="Bagmati">Bagmati</option>
+        <option value="Gandaki">Gandaki</option>
+        <option value="Lumbini">Lumbini</option>
+        <option value="karnali">karnali</option>
+        <option value="SudurPaschim">SudurPaschim</option>
+    </select><br><br>
+    <textarea name="About Yourself" id="aboutself" cols="120" rows="15"></textarea><table><tbody><tr><td>
+    </td></tr>
+     </tbody></table>Tell Extra About Yourself<br> <br>
+    
+    <input type="checkbox" name="remember" id="remember" wire:model="remember" class="form-checkbox size-4 text-primary rounded focus:ring-secondary hover:bg-secondary ring-offset-primary-800 focus:ring-2 bg-background-secondary border-neutral">
+    <label class="ml-2 text-sm text-primary-100" for="remember">
+                 Remember me   </label><br>
+
+    <!--[if BLOCK]><![endif]--><!--[if ENDBLOCK]><![endif]--></div>
+        <a class="text-sm text-secondary-500 text-secondary hover:underline ml-auto" href="https://client.freemchosting.com/password/request">
+            Forgot your password?
+        </a>
+    </div><br><br>
+    <button type="reset" class="reset">RESET</button><br><br>
+    <button type="submit" value="submit" class="submit"><b>SUBMIT FORM</b>
+    
+
+ </form>
+    </body>
+
+</html>
