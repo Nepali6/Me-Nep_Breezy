@@ -9,10 +9,17 @@
     />
     <title>About-Kshitiz aka Nep_Breezy</title>
     />
+    <link rel="stylesheet" href="clock.css" />
     <style>
       body {
-        background-color: rgb(2, 2, 22);
         font-family: "Poppins", sans-serif;
+        background: radial-gradient(
+          circle at center,
+          #01162c 10%,
+          #00152b 50%,
+          #000f1a 90%
+        );
+        position: relative;
       }
       html {
         scroll-behavior: smooth;
@@ -53,6 +60,7 @@
         letter-spacing: 2px;
         text-align: center;
         font-weight: 600;
+        margin-right: 300px;
       }
       .join-btn {
         margin-top: 5px;
@@ -542,6 +550,7 @@
         justify-content: center; /* centers horizontally */
         margin-top: 1px;
         margin-bottom: 5rem;
+        margin-right: 300px;
       }
 
       .avatar-img {
@@ -1110,11 +1119,107 @@
           transform: translateX(-8px);
         }
       }
+      .cursor-ripple {
+        position: absolute;
+        width: 6px;
+        height: 6px;
+        background: radial-gradient(
+          circle,
+          rgba(0, 255, 255, 0.9) 10%,
+          rgba(0, 180, 255, 0.7) 30%,
+          rgba(0, 100, 255, 0.6) 50%,
+          rgba(100, 255, 255, 0.5) 70%,
+          rgba(255, 255, 255, 0.3) 90%,
+          rgba(0, 50, 70, 0) 100%
+        );
+        border-radius: 50%;
+        transform: scale(1);
+        opacity: 1;
+        pointer-events: none;
+        animation: rippleEffect 2s linear forwards,
+          colorShift 2s infinite alternate;
+      }
+
+      @keyframes rippleEffect {
+        0% {
+          transform: scale(1);
+          opacity: 0.8;
+        }
+
+        100% {
+          transform: scale(50);
+          opacity: 0;
+        }
+      }
+
+      @keyframes colorShift {
+        0% {
+          filter: hue-rotate(0deg);
+        }
+
+        100% {
+          filter: hue-rotate(360deg);
+        }
+      }
+
+      .glow-star {
+        position: absolute;
+        background: rgba(255, 255, 255, 0.9);
+        border-radius: 50%;
+        box-shadow: 0 0 6px rgba(255, 255, 255, 0.9),
+          0 0 12px rgba(0, 255, 255, 0.6), 0 0 20px rgba(0, 128, 255, 0.4);
+        animation: twinkle 3s infinite alternate ease-in-out;
+      }
+
+      @keyframes twinkle {
+        0% {
+          opacity: 0.3;
+          transform: scale(0.8);
+        }
+
+        100% {
+          opacity: 1;
+          transform: scale(1.2);
+        }
+      }
     </style>
-    <script>
+    <script src="clock.js">
       function copyIP() {
         navigator.clipboard.writeText("bloodyvenom.xav.lat:19134");
         alert("IP copied: bloodyvenom.xav.lat:19134");
+        function createStars(numStars) {
+          for (let i = 0; i < numStars; i++) {
+            let star = document.createElement("div");
+            star.classList.add("glow-star");
+
+            let size = Math.random() + 1;
+            let x = Math.random() * window.innerWidth;
+            let y = Math.random() * window.innerHeight;
+
+            star.style.width = `${size}px`;
+            star.style.height = `${size}px`;
+            star.style.left = `${x}px`;
+            star.style.top = `${y}px`;
+            star.style.animationDuration = `${Math.random() + 1}s`;
+
+            document.body.appendChild(star);
+          }
+        }
+
+        createStars(100);
+
+        document.body.addEventListener("mousemove", function (e) {
+          let ripple = document.createElement("div");
+          ripple.classList.add("cursor-ripple");
+          ripple.style.left = `${e.clientX}px`;
+          ripple.style.top = `${e.clientY}px`;
+
+          document.body.appendChild(ripple);
+
+          setTimeout(() => {
+            ripple.remove();
+          }, 2000);
+        });
       }
     </script>
   </head>
@@ -1150,6 +1255,17 @@
         >
       </div>
     </nav>
+    <div class="neonClock">
+      <div class="numbers">
+        <span style="--i: 0"><b>12</b></span>
+        <span style="--i: 1"><b>3</b></span>
+        <span style="--i: 2"><b>6</b></span>
+        <span style="--i: 3"><b>9</b></span>
+        <div class="circle" id="hr"><i></i></div>
+        <div class="circle" id="mn"><i></i></div>
+        <div class="circle" id="sc"><i></i></div>
+      </div>
+    </div>
     <div class="subtitle floating">
       » NEPALI Minecraft YOUTUBER & Minecraft Server Dev «
     </div>
