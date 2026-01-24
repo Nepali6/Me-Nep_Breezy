@@ -198,42 +198,33 @@
         flex-wrap: wrap;
       }
       .card {
-        background: linear-gradient(90deg, #10182f 41%, #00002f 100%);
-        padding: 25px 10px;
-        border-radius: 10px;
-        font-weight: bold;
-        min-width: 200px;
-        transition: 0.3s ease;
-        color: white;
+        background: linear-gradient(
+          135deg,
+          #0c142b 0%,
+          #101834 60%,
+          #0a1028 100%
+        );
+        padding: 22px 18px;
+        border-radius: 14px;
+        font-weight: 600;
+        font-size: 1rem;
+        min-width: 220px;
+        color: #eaf6ff;
         text-decoration: none;
-        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.45);
-      }
-      .Venom {
-        padding: 15px 20px;
-        border-radius: 10px;
-        font-weight: 700;
-        min-width: 200px;
-        transition: 0.3s ease;
-        color: rgb(0, 0, 0);
-        text-decoration: none;
-        margin-top: 20px;
-        display: inline-block;
-        background: linear-gradient(135deg, #1be8ff, #8a53ff);
-        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.45);
-      }
-      .venom-wrapper {
-        display: flex;
-        justify-content: center;
+
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.55),
+          inset 0 0 0 1px rgba(0, 255, 255, 0.104);
+
+        transition: transform 0.25s ease, box-shadow 0.25s ease,
+          background 0.25s ease;
+  
+
       }
       .card:hover {
-        background: #0a1c4c;
-        transform: translateY(-5px);
-        box-shadow: 0 12px 35px rgba(0, 200, 255, 0.768);
-      }
-      .Venom:hover {
-        background: #1e1e5f;
-        transform: translateY(-5px);
-        color: rgb(255, 255, 255);
+        transform: translateY(-6px);
+        background: linear-gradient(135deg, #121c3d, #1a2550, #10183a);
+
+        box-shadow: 0 18px 45px rgba(0, 0, 0, 0.75), 0 0 18px rgb(0, 255, 255);
       }
       .extra-text {
         max-width: 700px;
@@ -289,64 +280,76 @@
         animation-delay: 0.8s;
       }
       /* ===== FULL PAGE INTRO ANIMATION ===== */
-
       #intro {
         position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: #090930;
+        inset: 0;
+        background: radial-gradient(circle at top, #0b0f2a, #050716);
         display: flex;
         align-items: center;
         justify-content: center;
         z-index: 9999;
-        animation: hideIntro 1s ease forwards;
-        animation-delay: 3s;
+
+        animation: introHide 0.8s ease forwards;
+        animation-delay: 2.2s;
       }
 
       .intro-content {
         text-align: center;
-        animation: fadeInScale 1.5s ease;
+        animation: introEnter 0.6s ease-out forwards;
       }
 
       .intro-content img {
-        width: 450px;
-        margin-bottom: 15px;
-        animation: float 3s ease-in-out infinite;
+        width: 320px;
+        margin-bottom: 12px;
+        filter: drop-shadow(0 0 18px rgba(0, 255, 255, 0.35));
+        animation: introFloat 2.5s ease-in-out infinite;
       }
 
       .intro-content h1 {
-        color: #abf8ff;
-        font-size: 4rem;
-        margin-bottom: 10px;
+        font-size: 3.2rem;
+        color: #c8fbff;
+        letter-spacing: 1px;
+        margin: 0;
       }
 
       .intro-content p {
-        color: #ccc;
-        letter-spacing: 2px;
-        font-size: 3rem;
+        font-size: 1.4rem;
+        color: #9aa4ff;
+        margin-top: 6px;
+        letter-spacing: 3px;
       }
 
-      /* Animations */
-      @keyframes fadeInScale {
+      /* ===== Animations ===== */
+
+      @keyframes introEnter {
         from {
           opacity: 0;
-          transform: scale(0.8);
+          transform: translateY(20px) scale(0.96);
         }
         to {
           opacity: 1;
-          transform: scale(1);
+          transform: translateY(0) scale(1);
         }
       }
 
-      @keyframes hideIntro {
+      @keyframes introFloat {
+        0% {
+          transform: translateY(0);
+        }
+        50% {
+          transform: translateY(-8px);
+        }
+        100% {
+          transform: translateY(0);
+        }
+      }
+
+      @keyframes introHide {
         to {
           opacity: 0;
           visibility: hidden;
         }
       }
-
       @keyframes float {
         0% {
           transform: translateY(0px);
@@ -385,8 +388,9 @@
         text-shadow: 0 0 10px rgb(255, 0, 255), 0 0 20px rgb(255, 0, 255),
           0 0 40px rgb(255, 0, 255), 0 0 80px rgb(255, 0, 255);
         animation: glow 1.5s ease-in-out infinite alternate;
-        margin-top: 15rem;
-      }
+        margin-top: 14rem;
+}
+
       @keyframes glow {
         0% {
           text-shadow: 0 0 5px #ee00ff, 0 0 10px #ff00e6;
@@ -698,7 +702,7 @@
         width: 100%;
       }
       .glowing-card:hover {
-        transform: translateY(-1rem);
+        transform: translateY(-5rem);
         box-shadow: 0 0 25px rgba(0, 255, 255, 0.45);
       }
       .glowing-card::before {
@@ -937,132 +941,12 @@
           margin: 30px 0;
         }
       }
-      .bounce {
-        -webkit-animation: bounce 2s infinite both;
-        animation: bounce 2s infinite both;
-      }
-      @-webkit-keyframes bounce {
-        0% {
-          -webkit-transform: translateY(-45px);
-          transform: translateY(-45px);
-          -webkit-animation-timing-function: ease-in;
-          animation-timing-function: ease-in;
-          opacity: 1;
-        }
-        24% {
-          opacity: 1;
-        }
-        40% {
-          -webkit-transform: translateY(-24px);
-          transform: translateY(-24px);
-          -webkit-animation-timing-function: ease-in;
-          animation-timing-function: ease-in;
-        }
-        65% {
-          -webkit-transform: translateY(-12px);
-          transform: translateY(-12px);
-          -webkit-animation-timing-function: ease-in;
-          animation-timing-function: ease-in;
-        }
-        82% {
-          -webkit-transform: translateY(-6px);
-          transform: translateY(-6px);
-          -webkit-animation-timing-function: ease-in;
-          animation-timing-function: ease-in;
-        }
-        93% {
-          -webkit-transform: translateY(-4px);
-          transform: translateY(-4px);
-          -webkit-animation-timing-function: ease-in;
-          animation-timing-function: ease-in;
-        }
-        25%,
-        55%,
-        75%,
-        87% {
-          -webkit-transform: translateY(0px);
-          transform: translateY(0px);
-          -webkit-animation-timing-function: ease-out;
-          animation-timing-function: ease-out;
-        }
-        100% {
-          -webkit-transform: translateY(0px);
-          transform: translateY(0px);
-          -webkit-animation-timing-function: ease-out;
-          animation-timing-function: ease-out;
-          opacity: 1;
-        }
-      }
-      @keyframes bounce {
-        0% {
-          -webkit-transform: translateY(-45px);
-          transform: translateY(-45px);
-          -webkit-animation-timing-function: ease-in;
-          animation-timing-function: ease-in;
-          opacity: 1;
-        }
-        24% {
-          opacity: 1;
-        }
-        40% {
-          -webkit-transform: translateY(-24px);
-          transform: translateY(-24px);
-          -webkit-animation-timing-function: ease-in;
-          animation-timing-function: ease-in;
-        }
-        65% {
-          -webkit-transform: translateY(-12px);
-          transform: translateY(-12px);
-          -webkit-animation-timing-function: ease-in;
-          animation-timing-function: ease-in;
-        }
-        82% {
-          -webkit-transform: translateY(-6px);
-          transform: translateY(-6px);
-          -webkit-animation-timing-function: ease-in;
-          animation-timing-function: ease-in;
-        }
-        93% {
-          -webkit-transform: translateY(-4px);
-          transform: translateY(-4px);
-          -webkit-animation-timing-function: ease-in;
-          animation-timing-function: ease-in;
-        }
-        25%,
-        55%,
-        75%,
-        87% {
-          -webkit-transform: translateY(0px);
-          transform: translateY(0px);
-          -webkit-animation-timing-function: ease-out;
-          animation-timing-function: ease-out;
-        }
-        100% {
-          -webkit-transform: translateY(0px);
-          transform: translateY(0px);
-          -webkit-animation-timing-function: ease-out;
-          animation-timing-function: ease-out;
-          opacity: 1;
-        }
-      }
       .shake {
         -webkit-animation: shake-horizontal 5s
           cubic-bezier(0.55, 0.085, 0.68, 0.53) 1s infinite both;
         animation: shake-horizontal 5s cubic-bezier(0.55, 0.085, 0.68, 0.53) 1s
           infinite both;
       }
-      /* ----------------------------------------------
- * Generated by Animista on 2026-1-10 0:15:27
- * Licensed under FreeBSD License.
- * See http://animista.net/license for more info. 
- * w: http://animista.net, t: @cssanimista
- * ---------------------------------------------- */
-
-      /**
- * ----------------------------------------
- * animation shake-horizontal
- * ----------------------------------------
- */
       @-webkit-keyframes shake-horizontal {
         0%,
         100% {
@@ -1182,6 +1066,222 @@
           transform: scale(1.2);
         }
       }
+      :root {
+    --glow-color: hsl(186 100% 69%);
+}
+      .glowing-btn {
+    position: relative;
+    color: var(--glow-color);
+    cursor: pointer;
+    padding: 0.35em 1em;
+    border: 0.15em solid var(--glow-color);
+    border-radius: 0.45em;
+    background: none;
+    perspective: 2em;
+    font-family: "Raleway", sans-serif;
+    font-size: 1.3rem;
+    font-weight: 900;
+    letter-spacing: 1px;
+    align-items: center;
+    margin-left: 32rem;
+
+    -webkit-box-shadow: inset 0px 0px 0.5em 0px var(--glow-color),
+        0px 0px 0.5em 0px var(--glow-color);
+    -moz-box-shadow: inset 0px 0px 0.5em 0px var(--glow-color),
+        0px 0px 0.5em 0px var(--glow-color);
+    box-shadow: inset 0px 0px 0.5em 0px var(--glow-color),
+        0px 0px 0.5em 0px var(--glow-color);
+    animation: border-flicker 2s linear infinite;
+}
+
+.glowing-txt {
+    float: left;
+    margin-right: -0.8em;
+    -webkit-text-shadow: 0 0 0.125em hsl(0 0% 100% / 0.3),
+        0 0 0.45em var(--glow-color);
+    -moz-text-shadow: 0 0 0.125em hsl(0 0% 100% / 0.3),
+        0 0 0.45em var(--glow-color);
+    text-shadow: 0 0 0.125em hsl(0 0% 100% / 0.3), 0 0 0.45em var(--glow-color);
+    animation: text-flicker 3s linear infinite;
+}
+
+.faulty-letter {
+    opacity: 0.5;
+    animation: faulty-flicker 2s linear infinite;
+}
+
+.glowing-btn::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    opacity: 0.7;
+    filter: blur(1em);
+    transform: translateY(120%) rotateX(95deg) scale(1, 0.35);
+    background: var(--glow-color);
+    pointer-events: none;
+}
+
+.glowing-btn::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0;
+    z-index: -1;
+    background-color: var(--glow-color);
+    box-shadow: 0 0 2em 0.2em var(--glow-color);
+    transition: opacity 100ms linear;
+}
+
+.glowing-btn:hover {
+    color: rgba(0, 0, 0, 0.8);
+    text-shadow: none;
+    animation: none;
+}
+
+.glowing-btn:hover .glowing-txt {
+    animation: none;
+}
+
+.glowing-btn:hover .faulty-letter {
+    animation: none;
+    text-shadow: none;
+    opacity: 1;
+}
+
+.glowing-btn:hover:before {
+    filter: blur(1.5em);
+    opacity: 1;
+}
+
+.glowing-btn:hover:after {
+    opacity: 1;
+}
+
+@keyframes faulty-flicker {
+    0% {
+        opacity: 0.1;
+    }
+
+    2% {
+        opacity: 0.1;
+    }
+
+    4% {
+        opacity: 0.5;
+    }
+
+    19% {
+        opacity: 0.5;
+    }
+
+    21% {
+        opacity: 0.1;
+    }
+
+    23% {
+        opacity: 1;
+    }
+
+    80% {
+        opacity: 0.5;
+    }
+
+    83% {
+        opacity: 0.4;
+    }
+
+    87% {
+        opacity: 1;
+    }
+}
+
+@keyframes text-flicker {
+    0% {
+        opacity: 0.1;
+    }
+
+    2% {
+        opacity: 1;
+    }
+
+    8% {
+        opacity: 0.1;
+    }
+
+    9% {
+        opacity: 1;
+    }
+
+    12% {
+        opacity: 0.1;
+    }
+
+    20% {
+        opacity: 1;
+    }
+
+    25% {
+        opacity: 0.3;
+    }
+
+    30% {
+        opacity: 1;
+    }
+
+    70% {
+        opacity: 0.7;
+    }
+
+    72% {
+        opacity: 0.2;
+    }
+
+    77% {
+        opacity: 0.9;
+    }
+
+    100% {
+        opacity: 0.9;
+    }
+}
+
+@keyframes border-flicker {
+    0% {
+        opacity: 0.1;
+    }
+
+    2% {
+        opacity: 1;
+    }
+
+    4% {
+        opacity: 0.1;
+    }
+
+    8% {
+        opacity: 1;
+    }
+
+    70% {
+        opacity: 0.7;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .glowing-btn {
+        font-size: 1em;
+    }
+} 
     </style>
     <script src="clock.js">
       function copyIP() {
@@ -1221,6 +1321,7 @@
           }, 2000);
         });
       }
+     
     </script>
   </head>
   <body>
@@ -1281,10 +1382,10 @@
         class="avatar-img"
       />
     </div>
-    <div class="venom-wrapper bounce">
-      <a href="https://nep-breezy.vercel.app/" class="Venom">
-        🐍 Venom SMP Developer Click here Know
-      </a>
+      <button class='glowing-btn'><a href="https://nep-breezy.vercel.app/">
+      <span class='glowing-txt'>🐍 Venom SMP<span class='faulty-letter'>Developer Click</span>
+        here Know</span>
+      </a></button>
     </div>
     <div class="glowing-about">🎮 <b>About Me</b> <br /></div>
     <div class="about-card">
@@ -1343,6 +1444,7 @@
     </div>
     <h2 class="glowing-I">What I Do</h2>
     <section class="extra-section">
+      
       <div class="card-row fade-in delay-3">
         <div class="card">🎮 Minecraft Content Creation</div>
         <div class="card">⚙️ Custom Server Development</div>
@@ -1354,9 +1456,11 @@
         <div class="card">💻 Software Engineering</div>
         <div class="card">🤖 Machine Learning</div>
         <div class="card">🛡️ Cyber Security</div>
-      </div>
+      </div></section>
       <section class="goal-section">
-        <h2 class="glowing-about">My Goals</h2>
+        <h2 class="glowing-about">
+    MY GOALS
+        </h2>
         <div class="goal-grid">
           <div class="goal-box">
             🔥<br />
@@ -1374,7 +1478,6 @@
           </div>
         </div>
       </section>
-    </section>
     <div class="cards">
       <article class="glowing-card">
         <div>
