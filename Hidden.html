@@ -1,0 +1,529 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hidden Content</title>
+  </head>
+  <style>
+    body {
+      background: linear-gradient(180deg, #000000, #000435);
+      animation: infinite gradientShift 5s ease;
+      background-size: 400% 400%;
+    }
+    @keyframes gradientShift {
+      0% {
+        background-position: 0% 50%;
+      }
+      50% {
+        background-position: 100% 50%;
+      }
+      100% {
+        background-position: 0% 50%;
+      }
+    }
+    body::before {
+      content: "";
+      position: fixed;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle, #14fff3 1px, transparent 1px);
+      background-size: 50px 50px;
+      animation: moveBg 10s linear infinite;
+      opacity: 0.2;
+    }
+
+    @keyframes moveBg {
+      from {
+        transform: translate(0, 0);
+      }
+      to {
+        transform: translate(-50px, -50px);
+      }
+    }
+    footer {
+      color: #e0ffff;
+      text-align: center;
+      margin-top: 50px;
+      font-size: 0.95rem;
+    }
+    .pic {
+      background-image: url(https://wallpapers.com/images/hd/dark-blue-4k-ultra-hd-tunnel-m3bpybou8ih2x9g5.jpg);
+      background-size: cover;
+      background-position: center;
+    }
+    nav {
+      position: fixed;
+      top: 5px;
+      background: rgba(0, 4, 127, 0.578);
+      padding: 12px 25px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      transition: all 0.3s ease;
+      margin-top: 5px;
+    }
+    nav a {
+      font-size: 1.4rem;
+      font-weight: 600;
+      color: #e0f7ff;
+      text-decoration: none;
+      letter-spacing: 1px;
+      transition: all 0.3s ease;
+    }
+
+    nav a:hover {
+      color: #24ff24;
+      text-shadow:
+        0 0 6px rgba(69, 255, 69, 0.7),
+        0 0 7px rgba(117, 255, 117, 0.7);
+    }
+    .hidden {
+      display: flex;
+      justify-content: center;
+      color: #00ebdf;
+      font-size: 3em;
+      align-items: center;
+      flex-direction: column;
+      text-shadow:
+        #00ebdf 0px 0px 10px,
+        #00fff2 0px 0px 20px,
+        #3efff5 0px 0px 30px;
+      cursor: default;
+    }
+    .experience {
+      margin-top: 150px;
+      cursor: default;
+    }
+    .experience h1 {
+      text-align: center;
+      color: #2bff00;
+      font-size: 3em;
+      text-shadow:
+        #2bff00 0px 0px 10px,
+        #2bff00 0px 0px 20px,
+        #2bff00 0px 0px 30px;
+      text-decoration: underline;
+    }
+    @keyframes float {
+      0% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-10px);
+      }
+      100% {
+        transform: translateY(0);
+      }
+    }
+    .skill {
+      display: flex;
+      justify-content: space-between;
+      font-size: 1.5em;
+      font-weight: bold;
+    }
+    .skill li {
+      font-size: 1em;
+      color: rgb(70, 163, 255);
+      margin-top: 10px;
+      text-shadow:
+        rgb(0, 106, 255) 0px 0px 10px,
+        rgb(0, 85, 255) 0px 0px 20px,
+        rgb(0, 102, 255) 0px 0px 30px;
+    }
+    .smp {
+      font-weight: bold;
+      margin-top: 150px;
+      text-align: center;
+      color: #ffffff;
+      font-size: 3em;
+      text-shadow:
+        #ffffff 0px 0px 10px,
+        #00f7ff 0px 0px 20px,
+        #00d0ff 0px 0px 30px;
+    }
+    .venom {
+      background: linear-gradient(180deg, #000000, #610000);
+      margin-top: 40px;
+      font-size: 1rem;
+      padding: 20px;
+    }
+
+    .server-title {
+      font-size: 50px;
+      font-weight: bold;
+      color: #2ee6a6;
+      text-shadow: 0 0 15px #2ee6a6;
+    }
+
+    .ip {
+      color: #aaa;
+      margin-bottom: 20px;
+    }
+
+    .status-box {
+      margin: 20px auto;
+      max-width: 700px;
+      padding: 20px;
+      border-radius: 15px;
+
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .left {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .dot {
+      width: 20px;
+      height: 20px;
+      background: #2ee6a6;
+      border-radius: 50%;
+      box-shadow: 0 0 10px #2ee6a6;
+    }
+    .ofdot {
+      width: 20px;
+      height: 20px;
+      background: #ff0000;
+      border-radius: 50%;
+      box-shadow: 0 0 10px #ff0000;
+    }
+    .left p {
+      color: #aaa;
+      font-size: 10px;
+    }
+    .right h2 {
+      color: #2ee6a6;
+    }
+
+    .right span {
+      color: #cecece;
+    }
+    .cards {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      margin-top: 20px;
+    }
+
+    .card {
+      width: 180px;
+      padding: 20px;
+      border-radius: 12px;
+
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(10px);
+
+      transition: 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 0 20px rgba(46, 230, 166, 0.3);
+    }
+    .magmacore {
+      background: linear-gradient(180deg, black, #6e3400, rgb(255, 85, 0));
+      margin-top: 40px;
+      font-size: 1rem;
+      padding: 20px;
+    }
+    .sagarmatha {
+      background: linear-gradient(180deg, #4d4d4d, rgb(47, 0, 255));
+      margin-top: 40px;
+      font-size: 1rem;
+      padding: 20px;
+    }
+    .rising {
+      background: linear-gradient(
+        180deg,
+        #000000,
+        rgb(146, 0, 0),
+        rgb(149, 79, 0)
+      );
+      margin-top: 40px;
+      font-size: 1rem;
+      padding: 20px;
+    }
+  </style>
+  <body>
+    <div class="pic">
+      <nav>
+        <a href="index.html">BACK</a>
+      </nav>
+      <div class="hidden">
+        <h1>This is a hidden page!</h1>
+        <p
+          style="
+            color: #dcfffd;
+            font-size: 1em;
+            text-align: center;
+            animation: float 2s ease-in-out infinite;
+          "
+        >
+          You found the hidden page! Congrats!
+        </p>
+      </div>
+      <div class="experience">
+        <h1>EXPERIENCE</h1>
+        <div class="skill">
+          <div>
+            <h2
+              style="
+                color: #2bff00;
+                text-shadow:
+                  #178900 0px 0px 10px,
+                  #199700 0px 0px 25px,
+                  #189100 0px 0px 45px;
+              "
+            >
+              SMP Development
+            </h2>
+
+            <ul>
+              <li>Since 2024</li>
+              <li>8 servers</li>
+            </ul>
+          </div>
+          <div>
+            <h2
+              style="
+                color: #ff4ef0;
+                text-shadow:
+                  #ff00ea 0px 0px 10px,
+                  #ff00ea 0px 0px 20px,
+                  #ff00ea 0px 0px 30px;
+              "
+            >
+              Web Development
+            </h2>
+
+            <ul>
+              <li>Since 2025</li>
+              <li>2 projects</li>
+            </ul>
+          </div>
+          <div>
+            <h2
+              style="
+                color: #ff0000;
+                text-shadow:
+                  #ff0000 0px 0px 10px,
+                  #ff0000 0px 0px 20px,
+                  #ff0000 0px 0px 30px;
+              "
+            >
+              YouTube Content Creation
+            </h2>
+            <ul>
+              <li>since 2024</li>
+              <li>100+ videos</li>
+            </ul>
+          </div>
+          <div>
+            <h2
+              style="
+                color: #0022ff;
+                text-shadow:
+                  #1500ff 0px 0px 10px,
+                  #2600ff 0px 0px 20px,
+                  #2b00ff 0px 0px 30px;
+              "
+            >
+              Video Editing
+            </h2>
+            <ul>
+              <li>since 2024</li>
+              <li>50 edits</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="smp">
+      SMP THAT I WORKED ON and am working on:
+      <div class="venom">
+        <h2 class="server-title">VENOM SMP</h2>
+        <p class="ip">play.venom.fun</p>
+
+        <div class="status-box">
+          <div class="left">
+            <span class="dot"></span>
+            <div>
+              <h3>Server Online</h3>
+              <p>Version: Velocity 1.20.1-1.21.11</p>
+            </div>
+          </div>
+
+          <div class="right">
+            <h2>0 <span>/ 1000</span></h2>
+            <p>Online Now</p>
+          </div>
+        </div>
+
+        <div class="cards">
+          <div class="card">
+            <h3>6</h3>
+            <p>Game Modes</p>
+          </div>
+
+          <div class="card">
+            <h3>50K+</h3>
+            <p>Matches</p>
+          </div>
+
+          <div class="card">
+            <h3>15+</h3>
+            <p>Arenas</p>
+          </div>
+        </div>
+      </div>
+      <div class="magmacore">
+        <h2 class="server-title">MAGMACORE</h2>
+        <p class="ip">play.magmacore.com</p>
+
+        <div class="status-box">
+          <div class="left">
+            <span class="ofdot"></span>
+            <div>
+              <h3>Server Offline</h3>
+              <p>Version: 1.21.1-1.21.11</p>
+            </div>
+          </div>
+
+          <div class="right">
+            <h2>0 <span>/ 100</span></h2>
+            <p>Online Now</p>
+          </div>
+        </div>
+
+        <div class="cards">
+          <div class="card">
+            <h3>6</h3>
+            <p>Game Modes</p>
+          </div>
+
+          <div class="card">
+            <h3>50K+</h3>
+            <p>Matches</p>
+          </div>
+
+          <div class="card">
+            <h3>15+</h3>
+            <p>Arenas</p>
+          </div>
+        </div>
+      </div>
+      <div class="sagarmatha">
+        <h2 class="server-title">SAGARMATHA-NP</h2>
+        <p class="ip">play.sagarmathanp.fun</p>
+
+        <div class="status-box">
+          <div class="left">
+            <span class="ofdot"></span>
+            <div>
+              <h3>Server Offline</h3>
+              <p>Version: 1.20.1-1.21.11</p>
+            </div>
+          </div>
+
+          <div class="right">
+            <h2>0 <span>/ 100</span></h2>
+            <p>Online Now</p>
+          </div>
+        </div>
+
+        <div class="cards">
+          <div class="card">
+            <h3>6</h3>
+            <p>Game Modes</p>
+          </div>
+
+          <div class="card">
+            <h3>50K+</h3>
+            <p>Matches</p>
+          </div>
+
+          <div class="card">
+            <h3>15+</h3>
+            <p>Arenas</p>
+          </div>
+        </div>
+      </div>
+      <div class="rising">
+        <h2 class="server-title">RISING SMP</h2>
+        <p class="ip">play.rising.com</p>
+
+        <div class="status-box">
+          <div class="left">
+            <span class="ofdot"></span>
+            <div>
+              <h3>Server Offline</h3>
+              <p>Version: 1.21.4-1.21.11</p>
+            </div>
+          </div>
+
+          <div class="right">
+            <h2>0 <span>/ 100</span></h2>
+            <p>Online Now</p>
+          </div>
+        </div>
+
+        <div class="cards">
+          <div class="card">
+            <h3>6</h3>
+            <p>Game Modes</p>
+          </div>
+
+          <div class="card">
+            <h3>50K+</h3>
+            <p>Matches</p>
+          </div>
+
+          <div class="card">
+            <h3>15+</h3>
+            <p>Arenas</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <hr />
+      <p class="glowing-footer">
+        <span
+          style="
+            text-shadow:
+              0 0 5px #00fff0,
+              0 0 10px #00fff0,
+              0 0 15px #00fff0;
+            animation: glowFooter 1.5s ease-in-out infinite alternate;
+          "
+          >⚡ Powered by</span
+        >
+        <span class="nep">NEP</span> —<span
+          style="
+            text-shadow:
+              0 0 5px #00fff0,
+              0 0 10px #00fff0,
+              0 0 15px #00fff0;
+            animation: glowFooter 1.5s ease-in-out infinite alternate;
+          "
+          >Made for</span
+        >
+        <span style="color: #00ffff">Nep_Breezy</span> | Developer of
+        <span class="venomfun">VenomFun⚡</span>
+      </p>
+      <span> <b>&copy; 2025 @ Nep_Breezy — All Rights Reserved</b></span>
+    </footer>
+  </body>
+</html>
