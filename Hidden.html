@@ -22,17 +22,105 @@
         background-position: 0% 50%;
       }
     }
+    .hidden {
+      display: flex;
+      justify-content: center;
+      color: #00ebdf;
+      font-size: 3em;
+      align-items: center;
+      flex-direction: column;
+      text-shadow:
+        #00ebdf 0px 0px 10px,
+        #00fff2 0px 0px 20px,
+        #3efff5 0px 0px 30px;
+      cursor: default;
+      position: relative;
+      overflow: hidden;
+      z-index: 2;
+    }
+    .main-text {
+      font-size: 2em;
+      color: #00ebdf;
+      opacity: 0;
+      transform: scale(0.2);
+      text-shadow:
+        #00ebdf 0px 0px 10px,
+        #00fff2 0px 0px 20px,
+        #3efff5 0px 0px 30px;
+      animation: zoomIn 1.5s ease forwards;
+    }
+    .lightning {
+      position: absolute;
+      width: 6px;
+      height: 120%;
+      background: linear-gradient(cyan, white, transparent);
+      left: -20%;
+      top: 0;
+      opacity: 0;
+      animation: lightningMove 0.6s ease forwards;
+      animation-delay: 1.5s;
+      z-index: 2;
+      filter: blur(1px);
+    }
+    .sub-text {
+      margin-top: 20px;
+      font-size: 1.2em;
+      color: #dcfffd;
+      opacity: 0;
+      transform: translateY(60px);
+      animation: slideUp 1s ease forwards;
+      animation-delay: 2.2s;
+
+      text-shadow:
+        0 0 5px #00fff0,
+        0 0 10px #00fff0,
+        0 0 15px #00fff0;
+    }
+    @keyframes zoomIn {
+      to {
+        transform: scale(1);
+        opacity: 1;
+      }
+    }
+
+    @keyframes lightningMove {
+      from {
+        left: -20%;
+        opacity: 1;
+      }
+      to {
+        left: 120%;
+        opacity: 0;
+      }
+    }
+
+    @keyframes slideUp {
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+    .sub-text::after {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, #00fff0, transparent);
+      left: 0;
+      top: 100%;
+      animation: slideLine 1s ease forwards;
+      animation-delay: 2.5s;
+    }
     body::before {
       content: "";
       position: fixed;
       width: 200%;
       height: 200%;
-      background: radial-gradient(circle, #14fff3 1px, transparent 1px);
+      background: radial-gradient(circle, #00fff2 1px, transparent 1px);
       background-size: 50px 50px;
       animation: moveBg 10s linear infinite;
       opacity: 0.2;
     }
-
     @keyframes moveBg {
       from {
         transform: translate(0, 0);
@@ -40,6 +128,22 @@
       to {
         transform: translate(-50px, -50px);
       }
+    }
+    .pic::before {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 115%;
+      top: 0;
+      left: 0;
+      z-index: 0;
+      background: radial-gradient(circle, #00fff2 1.5px, transparent 1.5px);
+      background-size: 50px 50px;
+
+      animation: moveBg 10s linear infinite;
+
+      opacity: 0.5;
+      pointer-events: none;
     }
     footer {
       color: #e0ffff;
@@ -79,19 +183,6 @@
       text-shadow:
         0 0 6px rgba(69, 255, 69, 0.7),
         0 0 7px rgba(117, 255, 117, 0.7);
-    }
-    .hidden {
-      display: flex;
-      justify-content: center;
-      color: #00ebdf;
-      font-size: 3em;
-      align-items: center;
-      flex-direction: column;
-      text-shadow:
-        #00ebdf 0px 0px 10px,
-        #00fff2 0px 0px 20px,
-        #3efff5 0px 0px 30px;
-      cursor: default;
     }
     .experience {
       margin-top: 150px;
@@ -135,7 +226,7 @@
     }
     .smp {
       font-weight: bold;
-      margin-top: 150px;
+      margin-top: 100px;
       text-align: center;
       color: #ffffff;
       font-size: 3em;
@@ -261,17 +352,9 @@
         <a href="index.html">BACK</a>
       </nav>
       <div class="hidden">
-        <h1>This is a hidden page!</h1>
-        <p
-          style="
-            color: #dcfffd;
-            font-size: 1em;
-            text-align: center;
-            animation: float 2s ease-in-out infinite;
-          "
-        >
-          You found the hidden page! Congrats!
-        </p>
+        <h1 class="main-text">This is the Hidden page!</h1>
+        <div class="lightning"></div>
+        <p class="sub-text">You found the hidden page! Congrats!</p>
       </div>
       <div class="experience">
         <h1>EXPERIENCE</h1>
@@ -353,7 +436,12 @@
     <div class="smp">
       SMP THAT I WORKED ON and am working on:
       <div class="venom">
-        <h2 class="server-title">VENOM SMP</h2>
+        <h2 class="server-title" style="color: #ff0000; text-shadow: 0 0 15px">
+          <img
+            src="https://cdn.discordapp.com/attachments/1453758998586327194/1497999250884395058/image.png?ex=69ef9004&is=69ee3e84&hm=ebccaf2b402b10e4dcbaa4b8b1df20ea7c968c0ab8a295c3a7cb62118abbea7b&"
+            style="height: 100px; margin-right: 15px; vertical-align: middle"
+          />VENOM FUN
+        </h2>
         <p class="ip">play.venom.fun</p>
 
         <div class="status-box">
@@ -409,17 +497,17 @@
 
         <div class="cards">
           <div class="card">
-            <h3>6</h3>
+            <h3>Survival</h3>
             <p>Game Modes</p>
           </div>
 
           <div class="card">
-            <h3>50K+</h3>
-            <p>Matches</p>
+            <h3>2</h3>
+            <p>Season</p>
           </div>
 
           <div class="card">
-            <h3>15+</h3>
+            <h3>3</h3>
             <p>Arenas</p>
           </div>
         </div>
@@ -445,17 +533,17 @@
 
         <div class="cards">
           <div class="card">
-            <h3>6</h3>
+            <h3>Survival</h3>
             <p>Game Modes</p>
           </div>
 
           <div class="card">
-            <h3>50K+</h3>
+            <h3>5K+</h3>
             <p>Matches</p>
           </div>
 
           <div class="card">
-            <h3>15+</h3>
+            <h3>15</h3>
             <p>Arenas</p>
           </div>
         </div>
@@ -481,18 +569,18 @@
 
         <div class="cards">
           <div class="card">
-            <h3>6</h3>
+            <h3>2</h3>
             <p>Game Modes</p>
           </div>
 
           <div class="card">
-            <h3>50K+</h3>
+            <h3>2K+</h3>
             <p>Matches</p>
           </div>
 
           <div class="card">
-            <h3>15+</h3>
-            <p>Arenas</p>
+            <h3>Dead</h3>
+            <p>Now</p>
           </div>
         </div>
       </div>
