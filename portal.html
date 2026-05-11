@@ -1,0 +1,692 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Portal Transition</title>
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        overflow: hidden;
+        background: black;
+        font-family: Arial, sans-serif;
+      }
+
+      .world {
+        position: fixed;
+        inset: 0;
+
+        background-image: url("https://images7.alphacoders.com/741/741171.png");
+
+        background-size: cover;
+        background-position: center;
+
+        animation: zoomWorld 8s ease infinite alternate;
+      }
+
+      @keyframes zoomWorld {
+        from {
+          transform: scale(1);
+        }
+
+        to {
+          transform: scale(1.08);
+        }
+      }
+
+      .fog {
+        position: fixed;
+        inset: 0;
+
+        background:
+          radial-gradient(circle, transparent 20%, rgba(80, 0, 120, 0.7)),
+          rgba(120, 0, 255, 0.2);
+
+        backdrop-filter: blur(5px);
+
+        animation: pulseFog 3s ease infinite;
+      }
+
+      @keyframes pulseFog {
+        0% {
+          opacity: 0.6;
+        }
+
+        50% {
+          opacity: 1;
+        }
+
+        100% {
+          opacity: 0.6;
+        }
+      }
+
+      .portal-overlay {
+        position: fixed;
+        inset: 0;
+
+        background-image:
+          linear-gradient(rgba(255, 255, 255, 0.06) 50%, transparent 50%),
+          linear-gradient(90deg, rgba(255, 255, 255, 0.06) 50%, transparent 50%);
+
+        background-size: 120px 120px;
+
+        mix-blend-mode: screen;
+
+        opacity: 0.45;
+
+        animation:
+          portalShift 0.1s infinite alternate,
+          portalFade 4s ease infinite,
+          hueRotate 6s linear infinite;
+      }
+
+      @keyframes portalShift {
+        from {
+          transform: translateX(-5px) translateY(0px);
+        }
+
+        to {
+          transform: translateX(5px) translateY(3px);
+        }
+      }
+
+      @keyframes portalFade {
+        0% {
+          opacity: 0.4;
+        }
+
+        50% {
+          opacity: 0.7;
+        }
+
+        100% {
+          opacity: 0.4;
+        }
+      }
+
+      @keyframes hueRotate {
+        from {
+          filter: hue-rotate(0deg);
+        }
+
+        to {
+          filter: hue-rotate(25deg);
+        }
+      }
+
+      .noise {
+        position: fixed;
+        inset: 0;
+
+        background-image: url("https://www.transparenttextures.com/patterns/asfalt-dark.png");
+
+        opacity: 0.08;
+
+        mix-blend-mode: screen;
+
+        animation: noiseMove 0.2s infinite;
+      }
+
+      @keyframes noiseMove {
+        0% {
+          transform: translate(0);
+        }
+
+        25% {
+          transform: translate(-2px, 2px);
+        }
+
+        50% {
+          transform: translate(2px, -2px);
+        }
+
+        75% {
+          transform: translate(-1px, -1px);
+        }
+
+        100% {
+          transform: translate(0);
+        }
+      }
+
+      .particles {
+        position: fixed;
+        inset: 0;
+      }
+
+      .particle {
+        position: absolute;
+
+        width: 8px;
+        height: 8px;
+
+        background: #d000ff;
+
+        border-radius: 50%;
+
+        filter: blur(1px);
+
+        animation: floatUp linear infinite;
+      }
+
+      .particle:nth-child(1) {
+        left: 10%;
+        animation-duration: 7s;
+      }
+
+      .particle:nth-child(2) {
+        left: 25%;
+        animation-duration: 5s;
+      }
+
+      .particle:nth-child(3) {
+        left: 40%;
+        animation-duration: 8s;
+      }
+
+      .particle:nth-child(4) {
+        left: 60%;
+        animation-duration: 6s;
+      }
+
+      .particle:nth-child(5) {
+        left: 75%;
+        animation-duration: 9s;
+      }
+
+      .particle:nth-child(6) {
+        left: 90%;
+        animation-duration: 7s;
+      }
+
+      @keyframes floatUp {
+        from {
+          transform: translateY(100vh) scale(0.5);
+          opacity: 0;
+        }
+
+        30% {
+          opacity: 1;
+        }
+
+        to {
+          transform: translateY(-100px) scale(1.5);
+          opacity: 0;
+        }
+      }
+
+      .portal-ring {
+        position: absolute;
+
+        width: 420px;
+        height: 420px;
+
+        border-radius: 50%;
+
+        border: 4px solid rgba(200, 0, 255, 0.3);
+
+        box-shadow:
+          0 0 40px #c800ff,
+          inset 0 0 40px #7a00ff;
+
+        animation: rotateRing 8s linear infinite;
+      }
+
+      @keyframes rotateRing {
+        from {
+          transform: rotate(0deg);
+        }
+
+        to {
+          transform: rotate(360deg);
+        }
+      }
+
+      .vignette {
+        position: fixed;
+        inset: 0;
+
+        background: radial-gradient(
+          circle,
+          transparent 40%,
+          rgba(0, 0, 0, 0.85)
+        );
+
+        pointer-events: none;
+      }
+
+      .flash {
+        position: fixed;
+        inset: 0;
+
+        background: white;
+
+        opacity: 0;
+
+        transition: 0.3s;
+      }
+
+      .scanlines {
+        position: fixed;
+        inset: 0;
+
+        background: repeating-linear-gradient(
+          to bottom,
+          rgba(255, 255, 255, 0.03),
+          rgba(255, 255, 255, 0.03) 1px,
+          transparent 2px,
+          transparent 4px
+        );
+
+        pointer-events: none;
+      }
+
+      .content {
+        position: fixed;
+        inset: 0;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+
+        z-index: 20;
+
+        transform-style: preserve-3d;
+
+        animation:
+          appear 2s ease forwards,
+          floatContent 4s ease-in-out infinite;
+      }
+
+      @keyframes appear {
+        from {
+          opacity: 0;
+          transform: scale(1.3);
+          filter: blur(20px);
+        }
+
+        to {
+          opacity: 1;
+          transform: scale(1);
+          filter: blur(0);
+        }
+      }
+
+      @keyframes floatContent {
+        0% {
+          transform: translateY(0px);
+        }
+
+        50% {
+          transform: translateY(-10px);
+        }
+
+        100% {
+          transform: translateY(0px);
+        }
+      }
+
+      h1 {
+        font-size: 5rem;
+
+        color: white;
+
+        letter-spacing: 4px;
+
+        text-align: center;
+
+        text-shadow:
+          0 0 10px #d400ff,
+          0 0 25px #b300ff,
+          0 0 60px #6a00ff;
+      }
+
+      p {
+        margin-top: 20px;
+
+        color: #e6b7ff;
+
+        font-size: 1.3rem;
+
+        letter-spacing: 2px;
+
+        text-shadow: 0 0 10px #c300ff;
+      }
+
+      .loading {
+        width: 320px;
+        height: 8px;
+
+        background: rgba(255, 255, 255, 0.08);
+
+        border-radius: 999px;
+
+        margin-top: 35px;
+
+        overflow: hidden;
+      }
+
+      .loading::before {
+        content: "";
+
+        display: block;
+
+        width: 0%;
+        height: 100%;
+
+        background: linear-gradient(90deg, #dd00ff, #7a00ff);
+
+        box-shadow: 0 0 20px #a500d7;
+
+        animation: loadBar 3s linear forwards;
+      }
+
+      @keyframes loadBar {
+        to {
+          width: 100%;
+        }
+      }
+
+      .nether-screen {
+        position: fixed;
+        inset: 0;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+
+        background: linear-gradient(180deg, #120000, #2b0000, #000000);
+
+        z-index: 999;
+
+        animation: netherAppear 1.5s ease forwards;
+      }
+
+      @keyframes netherAppear {
+        from {
+          opacity: 0;
+          transform: scale(1.2);
+          filter: blur(20px);
+        }
+
+        to {
+          opacity: 1;
+          transform: scale(1);
+          filter: blur(0);
+        }
+      }
+
+      .nether-screen h1 {
+        color: #ff4d00;
+
+        font-size: 4rem;
+
+        text-shadow:
+          0 0 10px #ff2200,
+          0 0 25px #ff3300,
+          0 0 60px #ff0000;
+      }
+
+      .nether-screen p {
+        color: #ffb08a;
+      }
+
+      .nether-screen button {
+        margin-top: 40px;
+
+        padding: 15px 40px;
+
+        border: none;
+        border-radius: 14px;
+
+        background: linear-gradient(90deg, #ff3300, #ff7700);
+
+        color: white;
+
+        font-size: 1.1rem;
+        font-weight: bold;
+
+        cursor: pointer;
+
+        transition: 0.3s;
+
+        box-shadow: 0 0 20px #ff4400;
+      }
+
+      .nether-screen button:hover {
+        transform: scale(1.08);
+
+        box-shadow:
+          0 0 30px #ff2200,
+          0 0 50px #ff5500;
+      }
+
+      .powered {
+        position: absolute;
+        bottom: 25px;
+
+        color: #ff884d;
+
+        letter-spacing: 4px;
+
+        text-shadow:
+          0 0 10px #ff3300,
+          0 0 20px #ff5500;
+      }
+
+      @media (max-width: 768px) {
+        h1 {
+          font-size: 2.5rem;
+        }
+
+        .nether-screen h1 {
+          font-size: 2.5rem;
+        }
+
+        p {
+          font-size: 1rem;
+          padding: 0 20px;
+        }
+
+        .loading {
+          width: 220px;
+        }
+      }
+      .warning-text {
+        position: fixed;
+
+        top: 30px;
+        left: 50%;
+
+        transform: translateX(-50%);
+
+        color: #ff3c00;
+
+        font-size: 1.2rem;
+        font-weight: bold;
+
+        letter-spacing: 4px;
+
+        text-shadow:
+          0 0 10px #ff2200,
+          0 0 20px #ff0000;
+
+        z-index: 999;
+
+        animation:
+          warningBlink 1s infinite,
+          warningShake 0.1s infinite;
+      }
+
+      @keyframes warningBlink {
+        0% {
+          opacity: 1;
+        }
+
+        50% {
+          opacity: 0.4;
+        }
+
+        100% {
+          opacity: 1;
+        }
+      }
+
+      @keyframes warningShake {
+        0% {
+          transform: translateX(-50%) translateY(0px);
+        }
+
+        25% {
+          transform: translateX(-49%) translateY(1px);
+        }
+
+        50% {
+          transform: translateX(-51%) translateY(-1px);
+        }
+
+        75% {
+          transform: translateX(-50%) translateY(1px);
+        }
+
+        100% {
+          transform: translateX(-50%) translateY(0px);
+        }
+      }
+
+      .chromatic {
+        position: fixed;
+        inset: 0;
+
+        pointer-events: none;
+
+        mix-blend-mode: screen;
+
+        animation: chromaticShift 0.12s infinite alternate;
+      }
+
+      .chromatic::before,
+      .chromatic::after {
+        content: "";
+
+        position: absolute;
+        inset: 0;
+
+        background: inherit;
+      }
+
+      .chromatic::before {
+        background: rgba(255, 0, 0, 0.03);
+
+        transform: translateX(-3px);
+      }
+
+      .chromatic::after {
+        background: rgba(0, 170, 255, 0.03);
+
+        transform: translateX(3px);
+      }
+
+      @keyframes chromaticShift {
+        from {
+          transform: translateX(-1px);
+        }
+
+        to {
+          transform: translateX(1px);
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="world"></div>
+
+    <div class="fog"></div>
+
+    <div class="portal-overlay"></div>
+
+    <div class="noise"></div>
+
+    <div class="particles">
+      <div class="particle"></div>
+      <div class="particle"></div>
+      <div class="particle"></div>
+      <div class="particle"></div>
+      <div class="particle"></div>
+      <div class="particle"></div>
+    </div>
+
+    <div class="flash"></div>
+
+    <div class="scanlines"></div>
+
+    <div class="vignette"></div>
+
+    <div class="content">
+      <div class="portal-ring"></div>
+
+      <h1>DIMENSIONAL PORTAL</h1>
+
+      <p>Traveling between dimensions...</p>
+
+      <div class="loading"></div>
+    </div>
+    <div class="warning-text">
+      WARNING! : DIMENSIONAL INSTABILITY DETECTED!!!
+    </div>
+    <div class="chromatic"></div>
+    <script>
+      document.addEventListener("mousemove", (e) => {
+        const x = (e.clientX / window.innerWidth - 0.5) * 15;
+        const y = (e.clientY / window.innerHeight - 0.5) * 15;
+
+        document.querySelector(".content").style.transform =
+          `rotateY(${x}deg) rotateX(${-y}deg)`;
+      });
+
+      setInterval(() => {
+        const flash = document.querySelector(".flash");
+
+        flash.style.opacity = "0.18";
+
+        setTimeout(() => {
+          flash.style.opacity = "0";
+        }, 120);
+      }, 4000);
+
+      setTimeout(() => {
+        document.body.innerHTML = `
+
+<div class="nether-screen">
+
+<h1>WELCOME TO ANOTHER DIMENSION</h1>
+
+<p>Prepare for new challenges and adventures...</p>
+
+<button onclick="location.reload()">
+RETURN TO PORTAL
+</button>
+
+<div class="powered">
+POWERED BY NEP_BREEZY
+</div>
+
+</div>
+
+`;
+      }, 3000);
+    </script>
+  </body>
+</html>
