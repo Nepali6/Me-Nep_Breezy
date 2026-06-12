@@ -173,23 +173,24 @@
         height: 18px;
       }
       nav {
-        position: sticky;
-        top: 10px;
-        background: rgba(255, 255, 255, 0.05);
-        padding: 12px 25px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        border-top: 2px solid rgba(255, 255, 255, 0.1);
-        border-bottom: 2px solid rgba(255, 255, 255, 0.1);
-        transition: all 0.3s ease;
-        margin-top: 15px;
+      position: sticky;
+margin-top: 15px;
+  left: 0;
+
+  width: 100%;
+
+  padding: 0.9rem 9%;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  background: rgba(255, 255, 255, 0.03);
+
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255, 255,255, 0.15);
+  border-top: 2px solid rgba(255, 255, 255, 0.1);
       }
-        nav.scrolled {
-        background: rgba(0, 0, 0, 0.3); 
-        backdrop-filter: blur(40px);
-        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-}
       nav a {
         font-size: 1.4rem;
         font-weight: 600;
@@ -828,6 +829,120 @@
           #00bfff;
         -webkit-box-reflect: below 0px linear-gradient(transparent, #0005);
       }
+      .neonClock {
+  position: relative;
+  width: 280px;
+  height: 280px;
+  background: #c9d5e0;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 999px;
+  box-shadow: 30px 30px 30px -10px rgba(0, 0, 0, 0.15),
+    inset 15px 15px 10px rgba(255, 255, 255, 0.75),
+    -15px -15px 35px rgba(255, 255, 255, 0.55),
+    inset -1px -1px 10px rgba(0, 0, 0, 0.2);
+    float: left;
+    margin-top: 2rem;
+    margin-left: 2rem;
+}
+
+.neonClock::before {
+  content: "";
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background: #e91e63;
+  border-radius: 50%;
+  z-index: 1000;
+  box-shadow: 0 0 0 1px #e91e63, 0 0 0 3px #fff, 0 0 5px 5px rgba(0, 0, 0, 0.15);
+}
+
+.neonClock .numbers {
+  position: absolute;
+  inset: 30px;
+  background: #152b4a;
+  border-radius: 50%;
+  box-shadow: 4px 4px 15px #152b4a66,
+    inset 5px 5px 5px rgba(255, 255, 255, 0.55),
+    -6px -6px 10px rgba(255, 255, 255, 1);
+}
+
+.neonClock .numbers span {
+  position: absolute;
+  inset: 5px;
+  text-align: center;
+  color: #fff;
+  font-size: 1.25em;
+  transform: rotate(calc(90deg * var(--i)));
+}
+
+.neonClock .numbers span b {
+  font-weight: 600;
+  display: inline-block;
+  transform: rotate(calc(-90deg * var(--i)));
+}
+
+.neonClock .numbers::before {
+  content: "";
+  position: absolute;
+  inset: 35px;
+  background: linear-gradient(#2196f3, #e91e63);
+  border-radius: 50%;
+  animation: animate 2s linear infinite;
+}
+
+@keyframes animate {
+  0% {
+    transform: rotate(360deg);
+  }
+
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+.neonClock .numbers::after {
+  content: "";
+  position: absolute;
+  inset: 38px;
+  background: #152b4a;
+  border-radius: 50%;
+}
+
+.neonClock .numbers .circle {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  z-index: 10;
+}
+
+.neonClock .numbers .circle i {
+  position: absolute;
+  width: 3px;
+  height: 50%;
+  background: #fff;
+  transform-origin: bottom;
+}
+
+.neonClock .numbers .circle#hr i {
+  transform: scale(0.3);
+  width: 5px;
+}
+
+.neonClock .numbers .circle#mn i {
+  transform: scale(0.45);
+
+}
+
+.neonClock .numbers .circle#sc i {
+  transform: scale(0.55);
+  width: 2px;
+  background: #e91e63;
+  box-shadow: 0 30px 0 #e91e63;
+}
       .frontendfocus-container a:nth-child(1) {
         filter: hue-rotate(270deg);
       }
@@ -1946,18 +2061,17 @@ requestAnimationFrame(render);
           </div>
         </div>
       </section>
+
     <div class="cards">
       <article class="glowing-card">
         <div>
           <h2>Server Developer</h2>
-
           <p>
             I work on developing and managing custom Minecraft servers with
             optimized performance, balanced systems, and unique features. My
             focus is on creating stable, lag-free environments that offer fair
             gameplay and long-term enjoyment for the community.
           </p>
-
           <a href="#">Read more</a>
         </div>
       </article>
@@ -1965,9 +2079,8 @@ requestAnimationFrame(render);
       <article class="glowing-card">
         <div>
           <h2>Community Builder</h2>
-
           <p>
-            Building a strong and friendly Minecraft community is one of my main
+           Building a strong and friendly Minecraft community is one of my main
             goals. I believe in teamwork, respect, and creativity, and I aim to
             create a space where players can connect, compete, and enjoy the
             game together.
@@ -1995,7 +2108,6 @@ requestAnimationFrame(render);
       <article class="glowing-card">
         <div>
           <h2>Minecraft Content</h2>
-
           <p>
             I create immersive and entertaining Minecraft content focused on
             survival, PvP, and custom gameplay experiences. My goal is to
@@ -2003,10 +2115,10 @@ requestAnimationFrame(render);
             inspiring for players who love exploring Minecraft in new and
             creative ways.
           </p>
-
           <a href="#">Read more</a>
         </div>
       </article>
+
     </div>
     <div class="frontendfocus-container">
       <div class="neon-1">
@@ -2059,15 +2171,13 @@ requestAnimationFrame(render);
               <path d="M15.5 19l-7-7 7-7" />
             </svg>
           </div>
-
-          <div class="arrow-button next-button">
+            <div class="arrow-button next-button">
             <svg viewBox="0 0 24 24">
               <path d="M8.5 5l7 7-7 7" />
             </svg>
           </div>
         </div>
       </div>
-
     </div>
   </div>
 </div>
